@@ -25,6 +25,14 @@ most used ones. We'll use some Tic-Tac-Toe examples in order to spot the differe
 
 The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following.
 
+```math
+\begin{bmatrix}
+0 & 1 & 1 \\
+2 & 1 & 2
+1 & 2 & 0
+\end{bmatrix}
+```
+
 ::: The full code of 2D vector board representation
 
 ```C++ runnable
@@ -140,13 +148,6 @@ Many games can be represented using bitboards:
 * Othello
 * Connect four
 * Tic-Tac-Toe
-
-```math
-\begin{bmatrix}
-a & b \\
-c & d
-\end{bmatrix}
-```
 
 ```C++ runnable
 #include <iostream>
