@@ -6,10 +6,12 @@ plan:
       statement: markdowns/introduction.md
     - title: "Example: a Connect Four engine"
       statement: markdowns/introduction_example.md
-- title: Board representation
-  statement: markdowns/board.md
-- title: Managing entity
-  statement: markdowns/managing_entity.md
+- title: Bitboard operations
+  plan:
+    - title: Board representation
+      statement: markdowns/board.md
+    - title: Managing entity
+      statement: markdowns/managing_entity.md
 projects:
   cpp:
     root: /cpp-project
