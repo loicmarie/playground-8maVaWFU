@@ -1,7 +1,7 @@
 title: Bitboards basis
 plan:
 - title: Introduction
-  statement: markdowns/welcome.md
+  statement: markdowns/introduction.md
 - title: Board representation
   statement: markdowns/board.md
 - title: Managing entity
