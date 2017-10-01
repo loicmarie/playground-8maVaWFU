@@ -70,7 +70,7 @@ class State {
 	}
 };
 
-void display(State * state) autofold {
+void display(State * state) { // autofold {
 	int y,x;
 	std::string symbs = ".XO";
 	printf("   |");
