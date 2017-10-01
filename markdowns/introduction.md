@@ -26,7 +26,6 @@ most used ones. We'll use some Tic-Tac-Toe examples in order to spot the differe
 The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
 
 ```C++ runnable
-// autofold {
 
 #include <iostream>
 #include <stdlib.h>
@@ -34,13 +33,14 @@ The most standard manner to represent 2D board games is with 2D arrays. In the c
 using namespace std;
 
 class Move {
+// autofold {
     public:
 
 	int x,y;
 	Move(int x, int y) : x(x), y(y) {}
+// }
 };
 
-// }
 
 class State {
     public:
