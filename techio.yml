@@ -3,9 +3,9 @@ plan:
 - title: Introduction
   statement: markdowns/welcome.md
 - title: Board representation
-  statement: board.md
+  statement: markdowns/board.md
 - title: Managing entity
-  statement: managing_entity.md
+  statement: markdowns/managing_entity.md
 projects:
   cpp:
     root: /cpp-project
