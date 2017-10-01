@@ -28,7 +28,7 @@ The most standard manner to represent 2D board games is with 2D arrays. In the c
 ```math
 \begin{bmatrix}
 0 & 1 & 1 \\
-2 & 1 & 2
+2 & 1 & 2 \\
 1 & 2 & 0
 \end{bmatrix}
 ```
