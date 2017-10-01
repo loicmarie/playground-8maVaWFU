@@ -1,8 +1,6 @@
-# Introduction to Bitboards
+# Environment optimization in artificial intelligence
 
-## Environment optimization in artificial intelligence
-
-### Agent and Environment
+## Agent and Environment
 
 When creating some artificial intelligence (AI), we have to carry about two things:
 * The **environment**: where the agent will act and evolve. it defines the relation between a state, an action of the agent, and the resulting next state.
@@ -10,18 +8,20 @@ When creating some artificial intelligence (AI), we have to carry about two thin
 
 ![Agent and environment](http://cs-alb-pc3.massey.ac.nz/notes/59302/fig02.01.gif)
 
-### Importance of simulations
+## Importance of simulations
 
 Creating an AI means creating an agent that is able to act reasonably in the environment. In most of the currently existing intelligent algorithms, **we need to simulate the environment response** to an agent action. **The more states we simulate, the more accurate will be our agent**.
 
 Improving the number of states simulations is very important, **but not as many as improving the algorithm**. This tutorial will be useful only when you'll have an efficient algorithm, and you think that only the simulations could be improved.
 
-### Common data structures
+# Introduction to bitmaps
+
+## Common data structures
 
 The state representation depends on the environment and can be implemented in numerous different ways. We're not going to analyze all the methods but will quickly show the
 most used ones. We'll use some Tic-Tac-Toe examples in order to spot the differences, and write the State class and the associated methods.
 
-##### 2D vectors
+### 2D vectors
 
 The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
 
@@ -105,17 +105,7 @@ int main() {
 ```
 
 
-
-##### Trees
-
-```C++
-class State {
-  int player; // player to play this turn
-  int board[9]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
-}
-```
-
-##### 1D vectors
+### 1D vectors
 
 ```C++
 class State {
@@ -124,7 +114,7 @@ class State {
 }
 ```
 
-##### BitArray (or one-hot vector)
+### BitArray (or one-hot vector)
 
 We call a **Bitboard** a representation of an 8x8 game that uses a **BitArray data structure**.
 
@@ -138,7 +128,7 @@ class State {
 }
 ```
 
-##### Bitboards: BitArray exploitation in 2D board games
+### Bitboards: BitArray exploitation in 2D board games
 
 The purpose of this tutorial is to talk about a very efficient data structure for simulating 2D board games and other environments: **the biboards**.
 
