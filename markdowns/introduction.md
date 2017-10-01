@@ -14,6 +14,12 @@ Improving the number of states simulations is very important, **but not as many 
 
 The purpose of this tutorial is to talk about a very efficient data structure for simulating 2D board games and other environments: **the biboards**.
 
+Many games can be represented using bitboards: | [Chess](https://upload.wikimedia.org/wikipedia/commons/8/84/Chess960_example_init_position.png)
+* Chess
+* Othello
+* Connect four
+* Tic-Tac-Toe
+
 ```C++ runnable
 #include <iostream>
 
