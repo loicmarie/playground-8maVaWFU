@@ -1,6 +1,10 @@
-# Environment optimization in artificial intelligence
+# Environment optimization in Artificial Intelligence
 
-## Agent and Environment
+## What am I going to learn ?
+
+When making some AI, Bitboards come to be a **method for state representation** using the **BitArray data structure**. No no, stay here, I will explain. But before that, let's make a brief introduction on agents and environments.
+
+### Agent and Environment
 
 When creating some artificial intelligence (AI), we have to carry about two things:
 * The **environment**: where the agent will act and evolve. it defines the relation between a state, an action of the agent, and the resulting next state.
@@ -8,7 +12,7 @@ When creating some artificial intelligence (AI), we have to carry about two thin
 
 ![Agent and environment](http://cs-alb-pc3.massey.ac.nz/notes/59302/fig02.01.gif)
 
-## Importance of simulations
+### Importance of simulations
 
 Creating an AI means creating an agent that is able to act reasonably in the environment. In most of the currently existing intelligent algorithms, **we need to simulate the environment response** to an agent action. **The more states we simulate, the more accurate will be our agent**.
 
