@@ -1,7 +1,11 @@
 title: Bitboards basis
 plan:
-- title: Introduction
-  statement: markdowns/introduction.md
+- title: Introduction to Bitboards
+  plan:
+    - title: Bitboards and simulation
+      statement: markdowns/introduction.md
+    - title: Example: a Connect Four engine
+      statement: markdowns/introduction_example.md
 - title: Board representation
   statement: markdowns/board.md
 - title: Managing entity

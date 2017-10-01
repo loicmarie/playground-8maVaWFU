@@ -1,4 +1,4 @@
-# Introduction to Bitboards
+# Bitboards and simulation
 
 ## Environment optimization in artificial intelligence
 
