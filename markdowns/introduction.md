@@ -20,6 +20,13 @@ Many games can be represented using bitboards: | ![Chess](https://upload.wikime
 * Connect four
 * Tic-Tac-Toe
 
+```math
+\begin{bmatrix}
+a & b \\
+c & d
+\end{bmatrix}
+```
+
 ```C++ runnable
 #include <iostream>
 
