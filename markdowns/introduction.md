@@ -70,11 +70,9 @@ class State {
 	}
 };
 
-// autofold {
-
-void display(State * state) {
+void display(State * state) { // autofold {
 	int y,x;
-	char * symbs[3] = ".XO";
+	std::string symbs = ".XO";
 	printf("   |");
 	for ( x = 0; x < 3; x++)
 		printf(" %d |", x);
@@ -90,9 +88,8 @@ void display(State * state) {
 		printf("----------------");
 		printf("\n");
 	}
-}
-
-// }
+	printf("\n");
+} // }
 
 void dumbPlay(State * state) {
 	state->play(state->getMoves()[0]);
