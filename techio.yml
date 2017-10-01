@@ -1,7 +1,11 @@
-title: C++ Project
+title: Bitboards basis
 plan:
-- title: Welcome
+- title: Introduction
   statement: markdowns/welcome.md
+- title: Board representation
+  statement: board.md
+- title: Managing entity
+  statement: managing_entity.md
 projects:
   cpp:
     root: /cpp-project
