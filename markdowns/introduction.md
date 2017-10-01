@@ -18,18 +18,50 @@ Improving the number of states simulations is very important, **but not as many 
 
 ### Common data structures
 
-#### 2D vectors
+The state representation depends on the environment and can be implemented in numerous different ways. We're not going to analyze all the methods but will quickly show the
+most used ones. We'll use some Tic-Tac-Toe examples in order to spot the differences, and write the State class and the associated methods.
 
-The standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
+##### 2D vectors
+
+The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
 
 ```C++
+void dumbPlay(State * state) {
+	state->play(rand()%3, rand()%3);
+}
+
+class Move {
+	int x,y;
+	Move(int x, int y) : x(x), y(y) {}
+};
+
 class State {
   int player; // player to play this turn
   int board[3][3]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
+
+	int play(int x, int y) {
+		board[y][x] = player;
+		player = 1-player;
+	}
+	Move * getMoves() {
+		Move ** moves = (Move **) malloc((1+LARGEUR_MAX) * sizeof(Move *) );
+		int k = 0, x, y;
+		for(y=0; y < 3; y++) {
+			for (x=0; x < 3; x++) {
+				if (board[y][x] == ' ' ) {
+					moves[k] = Move(x,y);
+					k++;
+				}
+			}
+		}
+		return moves;
+	}
 }
 ```
 
-#### 1D vectors
+
+
+##### Trees
 
 ```C++
 class State {
@@ -38,7 +70,16 @@ class State {
 }
 ```
 
-#### BitArray (or one-hot vector)
+##### 1D vectors
+
+```C++
+class State {
+  int player; // player to play this turn
+  int board[9]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
+}
+```
+
+##### BitArray (or one-hot vector)
 
 We call a **Bitboard** a representation of an 8x8 game that uses a **BitArray data structure**.
 
@@ -52,7 +93,7 @@ class State {
 }
 ```
 
-### Bitboards: BitArray exploitation in 2D board games
+##### Bitboards: BitArray exploitation in 2D board games
 
 The purpose of this tutorial is to talk about a very efficient data structure for simulating 2D board games and other environments: **the biboards**.
 
