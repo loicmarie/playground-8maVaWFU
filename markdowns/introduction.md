@@ -1,6 +1,8 @@
 # Introduction to Bitboards
 
-## Agent and Environment in artificial intelligence
+## Environment optimization in artificial intelligence
+
+### Agent and Environment
 
 When creating some artificial intelligence (AI), we have to carry about two things:
 * The **environment**: where the agent will act and evolve. it defines the relation between a state, an action of the agent, and the resulting next state.
@@ -8,13 +10,25 @@ When creating some artificial intelligence (AI), we have to carry about two thin
 
 ![Agent and environment](http://cs-alb-pc3.massey.ac.nz/notes/59302/fig02.01.gif)
 
+### Importance of simulations
+
 Creating an AI means creating an agent that is able to act reasonably in the environment. In most of the currently existing intelligent algorithms, **we need to simulate the environment response** to an agent action. **The more states we simulate, the more accurate will be our agent**.
 
 Improving the number of states simulations is very important, **but not as many as improving the algorithm**. This tutorial will be useful only when you'll have an efficient algorithm, and you think that only the simulations could be improved.
 
+### Common data structures
+
+#### 2D vectors
+
+#### 1D vectors
+
+#### BitArray (or one-hot vector)
+
+### Bitboards: BitArray exploitation in 2D board games
+
 The purpose of this tutorial is to talk about a very efficient data structure for simulating 2D board games and other environments: **the biboards**.
 
-Many games can be represented using bitboards: | ![Chess](https://upload.wikimedia.org/wikipedia/commons/8/84/Chess960_example_init_position.png)
+Many games can be represented using bitboards:
 * Chess
 * Othello
 * Connect four
