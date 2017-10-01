@@ -96,6 +96,18 @@ class State {
 		}
 		return moves;
 	}
+	bool isWinningPosition() {
+	    int ¨prevPlayer = 1-player, x, y;
+	    bool isRow = false, 
+	         isCol = false,
+	         isDiag = false;
+		for(y=0; y < 3; y++) {
+		    bool isRowTmp = true;
+			for (x=0; x < 3; x++) {
+			    isRowTmp &&= board[y][x] == prevPlayer+1;
+			}
+		}
+	}
 };
 
 void display(State * state) { // autofold {
