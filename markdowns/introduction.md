@@ -10,13 +10,23 @@ When creating some artificial intelligence (AI), we have to carry about two thin
 * The **environment**: where the agent will act and evolve. it defines the relation between a state, an action of the agent, and the resulting next state.
 * The **agent**: anything that can perceive its environment through sensors and acts upon that
 
+> Why are we talking about that ?
+
+It's simple: we're not gonna make an agent, but an **efficient environment or simulation of the environment** in order to power up our simulation-based algorithms.
+
 ![Agent and environment](http://cs-alb-pc3.massey.ac.nz/notes/59302/fig02.01.gif)
 
 ### Importance of simulations
 
 Creating an AI means creating an agent that is able to act reasonably in the environment. In most of the currently existing intelligent algorithms, **we need to simulate the environment response** to an agent action. **The more states we simulate, the more accurate will be our agent**.
 
-Improving the number of states simulations is very important, **but not as many as improving the algorithm**. This tutorial will be useful only when you'll have an efficient algorithm, and you think that only the simulations could be improved.
+> OK, so at the end of the tutorial I could get the best AI whatever the environment is ?
+
+No, I really don't think so :D
+
+For two reasons:
+* Improving the number of states simulations is very important, **but not as many as improving the algorithm**. This tutorial will be useful only when you'll have an efficient algorithm, and you think that only the simulations could be improved.
+* Bitboards cannot be implemented without a lot of condition, and we will see later that it is not always the response to every problem. However, it remains a powerful tool that you should know about !
 
 # Introduction to bitmaps
 
