@@ -33,14 +33,14 @@ using namespace std;
 
 class Move {
     public:
-    
+
 	int x,y;
 	Move(int x, int y) : x(x), y(y) {}
 };
 
 class State {
     public:
-    
+
     int player; // player to play this turn
     int board[3][3]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
 
@@ -68,6 +68,29 @@ class State {
 		}
 		return moves;
 	}
+
+	// autofold {
+
+	void display(State * state) {
+		int y,x;
+		printf("   |");
+		for ( x = 0; x < 3; x++)
+			printf(" %d |", x);
+		printf("\n");
+		printf("----------------");
+		printf("\n");
+
+		for(y=0; y < 3; y++) {
+			printf(" %d |", y);
+			for ( x = 0; x < 3; x++)
+				printf(" %c |", etat->plateau[y][x]);
+			printf("\n");
+			printf("----------------");
+			printf("\n");
+		}
+	}
+
+	// }
 };
 
 void dumbPlay(State * state) {
