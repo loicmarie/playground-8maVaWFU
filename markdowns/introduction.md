@@ -68,30 +68,31 @@ class State {
 		}
 		return moves;
 	}
+};
 
-	// autofold {
+// autofold {
 
-	void display(State * state) {
-		int y,x;
-		printf("   |");
+void display(State * state) {
+	int y,x;
+	char * symbs[3] = ".XO";
+	printf("   |");
+	for ( x = 0; x < 3; x++)
+		printf(" %d |", x);
+	printf("\n");
+	printf("----------------");
+	printf("\n");
+
+	for(y=0; y < 3; y++) {
+		printf(" %d |", y);
 		for ( x = 0; x < 3; x++)
-			printf(" %d |", x);
+			printf(" %c |", symbs[state->board[y][x]]);
 		printf("\n");
 		printf("----------------");
 		printf("\n");
-
-		for(y=0; y < 3; y++) {
-			printf(" %d |", y);
-			for ( x = 0; x < 3; x++)
-				printf(" %c |", etat->plateau[y][x]);
-			printf("\n");
-			printf("----------------");
-			printf("\n");
-		}
 	}
+}
 
-	// }
-};
+// }
 
 void dumbPlay(State * state) {
 	state->play(state->getMoves()[0]);
