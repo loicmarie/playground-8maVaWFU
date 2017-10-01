@@ -20,9 +20,37 @@ Improving the number of states simulations is very important, **but not as many 
 
 #### 2D vectors
 
+The standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
+
+```C++
+class State {
+  int player; // player to play this turn
+  int board[3][3]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
+}
+```
+
 #### 1D vectors
 
+```C++
+class State {
+  int player; // player to play this turn
+  int board[9]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
+}
+```
+
 #### BitArray (or one-hot vector)
+
+We call a **Bitboard** a representation of an 8x8 game that uses a **BitArray data structure**.
+
+Modifying the above example, we get:
+
+```C++
+class State {
+  int player;
+  uint64_t board; // bitboard
+  uint64_t position; // bitboard
+}
+```
 
 ### Bitboards: BitArray exploitation in 2D board games
 
