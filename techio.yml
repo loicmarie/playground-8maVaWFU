@@ -4,7 +4,7 @@ plan:
   plan:
     - title: Bitboards and simulation
       statement: markdowns/introduction.md
-    - title: Example: a Connect Four engine
+    - title: "Example: a Connect Four engine"
       statement: markdowns/introduction_example.md
 - title: Board representation
   statement: markdowns/board.md
