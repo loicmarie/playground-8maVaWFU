@@ -25,7 +25,7 @@ most used ones. We'll use some Tic-Tac-Toe examples in order to spot the differe
 
 The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
 
-```C++
+```C++ runnable
 void dumbPlay(State * state) {
 	state->play(rand()%3, rand()%3);
 }
@@ -36,15 +36,15 @@ class Move {
 };
 
 class State {
-  int player; // player to play this turn
-  int board[3][3]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
+    int player; // player to play this turn
+    int board[3][3]; // 0 for empty, 1 for first player tiles, 2 for opponent tiles
 
 	int play(int x, int y) {
 		board[y][x] = player;
 		player = 1-player;
 	}
 	Move * getMoves() {
-		Move ** moves = (Move **) malloc((1+LARGEUR_MAX) * sizeof(Move *) );
+	    Move ** moves = (Move **) malloc((1+LARGEUR_MAX) * sizeof(Move *) );
 		int k = 0, x, y;
 		for(y=0; y < 3; y++) {
 			for (x=0; x < 3; x++) {
