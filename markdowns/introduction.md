@@ -23,7 +23,9 @@ most used ones. We'll use some Tic-Tac-Toe examples in order to spot the differe
 
 ### 2D vectors
 
-The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following:
+The most standard manner to represent 2D board games is with 2D arrays. In the case of the Tic-Tac-Toe, we could represent a state of the board like the following.
+
+::: The full code of 2D vector board representation
 
 ```C++ runnable
 
@@ -104,7 +106,7 @@ int main() {
     cout << "ok" << endl;
 }
 ```
-
+:::
 
 ### 1D vectors
 
