@@ -16,8 +16,11 @@ In this tutorial, we use the **Big Endian notation**. All the formulas you will 
 <p>
 ###### Reminder: Endianness
 
-Big Endian notation: the first bit is the biggest. **ex**: $`1101_2 = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 13_10`$
-Little Endian notation: the last bit is the biggest **ex**: $`1101_2 = 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 = 11_10`$
+Big Endian notation: the first bit is the biggest. 
+**ex**: $`1101_2 = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 13_10`$
+
+Little Endian notation: the last bit is the biggest 
+**ex**: $`1101_2 = 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 = 11_10`$
 </p>
 
 Reading the **bits from right to left** corresponds to reading the **2D cells from left to right and from top to bottom**
