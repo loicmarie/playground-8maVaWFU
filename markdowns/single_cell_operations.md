@@ -6,7 +6,7 @@ In the following sections, we will keep our **Tic-Tac-Toe** example. We will als
 * a simple display, that shows the binary sequence
 * a pretty display, that shows the board representation
 
-You are lucky, I already prepared these functions. In the following code, you get the state structure written in the previous section, and two function `Utils::display(Bitboard position)` and `Utils::displayPretty(Bitboard position)`.
+You are lucky, I already prepared these functions. In the following code, you get the state structure written in the previous section, and two functions `Utils::display(Bitboard position)` and `Utils::displayPretty(Bitboard position)`.
 
 Display the board and try to change the `state.board` to get different positions.
 
