@@ -100,7 +100,7 @@ Pretty straightforward, isn't it ?
 The same happens if you want know whether the board is empy or not (but it should not be useful here)
 
 | Test           | Method |
-|:---------------|:------:|
+|:---------------|:-------|
 | `bool isDrawPosition(State * state)` | `return state->position == 511` |
 | `bool isEmptyBoard(State * state)`   | `return state->position == 0` |
 | `bitboard getOpponentTiles(State * state)` | `return state->board ^ state->position` |
