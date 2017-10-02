@@ -1,7 +1,12 @@
 # Introduction
 
 
+
 # A word about simulation
+
+## Why should I care about bitboards ?
+
+When making some AI, Bitboards come to be a **method for state representation** using the **BitArray data structure**. No no, stay here, I will explain. But before that, let's make a brief introduction on agents and environments.
 
 ## Agent and Environment in AI
 

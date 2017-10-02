@@ -130,11 +130,3 @@ Here is a non exhaustive list of usual methods in 2D board game (here for a Tic-
 | `Bitboard getRow(int y)` | `return board & (UINT64_C(73) << y);` | Get a row on the board |
 | `Bitboard getColumn(int x)` | `return board & (UINT64_C(7) << WIDTH*x);` | Get a column on the board |
 | `void resetState()` | `board = 0; position = 0` | Reset the state to empty board |
-
-
-
-# Bitboards and simulation
-
-## Why should I care about bitboards ?
-
-When making some AI, Bitboards come to be a **method for state representation** using the **BitArray data structure**. No no, stay here, I will explain. But before that, let's make a brief introduction on agents and environments.
