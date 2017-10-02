@@ -1,12 +1,20 @@
 # Introduction
 
+Bitboard is a **method for representing states** in game engine, and particularly in **2D board games**. 
 
+It uses the **bit array data structure** and transform all usual searching/testing methods into **binary** and **logical** operations.
+
+It allows to:
+1. use only one bit where common data structure use one byte
+2. perform high efficiency operations
 
 # A word about simulation
 
 ## Why should I care about bitboards ?
 
-When making some AI, Bitboards come to be a **method for state representation** using the **BitArray data structure**. No no, stay here, I will explain. But before that, let's make a brief introduction on agents and environments.
+When making some AI, 
+
+No no, stay here ! I will explain. But before that, let's make a brief introduction on agents and environments.
 
 ## Agent and Environment in AI
 
