@@ -108,12 +108,12 @@ Here is a non exhaustive list of usual methods in 2D board game (here for a Tic-
 
 | Name           | Method | Description |
 |:---------------|:-------|:------------|
-| `void putTile(int x, int y)` | `state->position |= (1 << y*WIDTH+x)` | Put a tile on the board at (x,y) |
-| `bool isDrawPosition(State * state)` | `return state->position == 511` | Whether a position is draw or not |
-| `bool isEmptyBoard(State * state)`   | `return state->position == 0` | Whether a board is empty or not |
-| `bitboard getOppTiles(State * state)` | `return state->board ^ state->position` | Get the current player opponent tiles position |
-| `bitboard getRow(State * state, int row)` | `return state->board ^ state->position` | Get a row on the board |
-| `void resetState(State * state)` | `state->board = 0; state->position = 0` | Reset the state to empty board |
+| `void putTile(int x, int y)` | `position |= (1 << y*WIDTH+x)` | Put a tile on the board at (x,y) |
+| `bool isDrawPosition()` | `return position == 511` | Whether a position is draw or not |
+| `bool isEmptyBoard()`   | `return position == 0` | Whether a board is empty or not |
+| `bitboard getOppTiles()` | `return board ^ position` | Get the current player opponent tiles position |
+| `bitboard getRow(int row)` | `return board ^ position` | Get a row on the board |
+| `void resetState()` | `board = 0; position = 0` | Reset the state to empty board |
 
 
 
