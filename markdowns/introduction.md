@@ -84,14 +84,16 @@ Despite of the lack of clarity in the code, the goal is to transform all usual s
 
 ### Is winning position
 
-```C++
-bool isWinningPosition(State * state) {
-    uint64_t p = state->position
-    return (p==7) | (p==56) | (p==448) // rows
-         | (p==73) | (p==146) | (p==292) // columns
-         | (p==84) | (p==273)); // diags
-}
-```
+| Test | Method |
+|----------------
+| isWinningPosition | ```C++ |
+|                   |   bool isWinningPosition(State * state) { |
+|                   |       uint64_t p = state->position |
+|                   |       return (p==7) || (p==56) || (p==448) // rows |
+|                   |            || (p==73) || (p==146) || (p==292) // columns |
+|                   |            || (p==84) || (p==273)); // diags |
+|                   |   } |
+|                   |   ``` |
 
 ### Is draw position
 
