@@ -1,5 +1,9 @@
 # I.1 Example: a Connect Four engine
 
+That was a boring introduction, but now let's look at some code.
+
+We will begin with talking about writting a game engine and describing the game state. Next, we will briefly show a game engine (the state structure and methods) that uses bitboards.
+
 - [The Tic-Tac-Toe Game](#tictactoe)
 - [Game state representation](#game-state)
 - [The bit array data structure](#bit-array)
@@ -13,9 +17,9 @@ It's a simple game for two players, X and O, who take turns marking the spaces i
 
 ![Tictactoe](https://www.tenstickers.be/stickers/img/preview/sticker-decoratif-morpion-pour-mac-2609.png)
 
-Let's imagine that you are writting an artificial intelligence (AI) on this game.
+Let's imagine that you are writting an AI on this game.
 
-You have selected your algorithm, a minimax, or a Monte Carlo tree search for example. Unluckily, such algorithm need a high number of simulations and you're sceptical concerning the simulation engine you wrote.
+You have selected your algorithm, a **minimax**, or a **Monte Carlo tree search** for example. Unluckily, such algorithm need a **high number of simulations** and you're sceptical concerning the simulation engine you wrote.
 
 
 
