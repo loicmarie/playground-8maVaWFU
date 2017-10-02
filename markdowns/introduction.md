@@ -14,6 +14,7 @@ You have selected your algorithm, a minimax, or a Monte Carlo tree search for ex
 
 As a **representation of a game state**, you defined your board using a 2D array, or a 1D vector.
 
+
 ```math
 \begin{array}{ccc}
 2D Array & 1D Vector & Dictionary\\
@@ -27,6 +28,7 @@ As a **representation of a game state**, you defined your board using a 2D array
 (1,2):2, (2,0):1, (2,1):2, (2,2):0 \right\}
 \end{array}
 ```
+
 
 In order to get a non-ambiguous state representation, you probably added a `player` variable to know the player who should play this turn. Ideally, we would have something like this:
 
