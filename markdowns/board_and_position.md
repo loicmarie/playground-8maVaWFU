@@ -73,8 +73,8 @@ namespace Utils {
         printf("Bitboard display:\n\n");
         for(i=0; i < 3; i++) {
             for ( j = 0; j < 3; j++) {
-                printf((currPosition & 0x01) ? "1" : "0");
-                currPosition >>= 1;
+                printf((currPosition & 0x100) ? "1" : "0");
+                currPosition <<= 1;
             }
         }
         printf("\n\n");
