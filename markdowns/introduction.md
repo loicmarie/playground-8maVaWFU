@@ -84,8 +84,8 @@ Despite of the lack of clarity in the code, the goal is to transform all usual s
 
 ### Is winning position
 
-| Test | Method |
-|----------------
+| Test              | Method |
+|------------------:|-------:|
 | isWinningPosition | ```C++ |
 |                   |   bool isWinningPosition(State * state) { |
 |                   |       uint64_t p = state->position |
