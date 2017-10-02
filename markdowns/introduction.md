@@ -104,14 +104,18 @@ bool isWinningPosition(State * state) {
 
 Pretty straightforward, isn't it ?
 
-The same happens if you want know whether the board is empy or not (but it should not be useful here)
+Here is a non exhaustive list of usual methods in 2D board game (here for a Tic-Tac-Toe engine).
 
 | Test           | Method |
 |:---------------|:-------|
+| `void putTile(int x, int y)` | `state->position |= (1 << y*WIDTH+x)` |
 | `bool isDrawPosition(State * state)` | `return state->position == 511` |
 | `bool isEmptyBoard(State * state)`   | `return state->position == 0` |
 | `bitboard getOpponentTiles(State * state)` | `return state->board ^ state->position` |
 | `bitboard getRow(State * state, int row)` | `return state->board ^ state->position` |
+| `void resetState(State * state)` | `state->board = 0; state->position = 0` |
+
+
 
 # Bitboards and simulation
 
