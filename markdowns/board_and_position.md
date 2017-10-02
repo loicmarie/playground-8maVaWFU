@@ -30,6 +30,12 @@ Reading the **bits from right to left** corresponds to reading the **2D cells fr
 
 ![Numerotation](img/numerotation.png)
 
+Using cartesian coordinates (x,y), we can observe that:
+* The coordinates (0,0) corresponds to the bit n°0
+* The coordinates (1,0) corresponds to the bit n°1
+* The coordinates (1,1) corresponds to the bit n°4
+* The coordinates (2,2) corresponds to the bit n°8
+
 As shown in the above image, in the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
 
 
