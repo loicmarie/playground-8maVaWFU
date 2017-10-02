@@ -30,7 +30,7 @@ Reading the **bits from right to left** corresponds to reading the **2D cells fr
 
 ![Numerotation](img/numerotation.png)
 
-In the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
+As shown in the above image, in the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
 
 
 # Bits position with N > 64
