@@ -4,7 +4,7 @@ We will now see how to:
 * get the value of a cell
 * set the value of a cell
 
-**Rappel**: dans ce tutorial (qui est en C++), le type `Bitboard` a été défini comme un entier non signé de 64bits (correspondant au type `uint64_t`)
+**Reminder**: in this tutorial (which uses C++), the `Bitboard` type has been defined as an unsigned 64bits integer (corresponding to the `uint64_t` type)
 
 # Cells and positions
 
@@ -19,6 +19,8 @@ In fact a bitboard representing a cell is a sequence with only **1 bit at 1** an
 ![Cell](img/cell.png)
 
 # Get a cell
+
+Now that we know how are defined position and cells, we want to get the value at a position, and we want to get it with (x,y) cartesian coordinates.
 
 ```C++ runnable
 int main() {
