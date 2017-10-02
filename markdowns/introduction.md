@@ -20,7 +20,7 @@ This data structure is very often used in famous 2D board games like:
 * [The Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 * Many word games
 
-## Just give me the code
+## Just give me the code !
 
 If you already know why you are here, you can **go to the first section** and see a short example of bitboard application.
 
