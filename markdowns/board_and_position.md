@@ -13,7 +13,7 @@ Before answering this question, we should see **how bits are numeroted in 2D spa
 
 In this tutorial, we use the **Big Endian notation**. All the formulas you will read later will entirely depends on this frame of reference.
 
-###### Reminder: Endianness
+::: Reminder: Endianness
 
 **Big Endian** notation: the first bit is the biggest. 
 ```math
@@ -24,6 +24,7 @@ In this tutorial, we use the **Big Endian notation**. All the formulas you will 
 ```math
 1101_2 = 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 = 11_10
 ```
+:::
 
 Reading the **bits from right to left** corresponds to reading the **2D cells from left to right and from top to bottom**
 
