@@ -52,7 +52,7 @@ No problem, that's a very good choice, but let's make something different and se
 
 # The bit array data structure
 
-Let me introduce you **_bit array_**:
+Let me introduce you to **_bit array_**:
 
 ```math
 \begin{array}{ccc}
