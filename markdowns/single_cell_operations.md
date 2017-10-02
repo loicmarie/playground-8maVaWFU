@@ -34,7 +34,64 @@ typedef struct StateSt {
 } State;
 
 namespace Utils {
-    
+  // autofold {
+
+  namespace Bitboard {
+
+    void displayBitboard(uint64_t position) {
+      int i,j;
+      uint64_t currPosition = position;
+        for(i=0; i < HEIGHT; i++) {
+            // printf("%lu\n", position);
+            // currPosition = position >> i;
+            for ( j = 0; j < WIDTH; j++) {
+              if (currPosition & 0x01) {
+                   printf("1");
+              } else {
+                   printf("0");
+              }
+              currPosition = currPosition >> 1;
+            }
+        }
+        printf("\n");
+    }
+
+    void display(uint64_t board, uint64_t position) { // TODO: afficher le jeu a l'endroit
+        char symb;
+      int i,j;
+      uint64_t boardTmp = board,
+               positionTmp = position;
+      printf("   |");
+      for (j = 0; j < WIDTH; j++)
+        printf(" %d |", j);
+      printf("\n");
+      for (j=0; j<WIDTH+1; j++)
+          printf("----");
+      printf("\n");
+        for(i=0; i < HEIGHT; i++) {
+            // boardTmp = board >> i;
+            // positionTmp = position >> i;
+            printf(" %d |", i);
+            for ( j = 0; j < WIDTH; j++) {
+              if (positionTmp & 0x01) {
+                   symb = 'X';
+              } else {
+                   symb = '.';
+              }
+              printf(" %c |", symb);
+              boardTmp = boardTmp >> 1;
+              positionTmp = positionTmp >> 1;
+            }
+            printf("\n");
+          for (j=0; j<WIDTH+1; j++)
+              printf("----");
+          printf("\n");
+        }
+    }
+
+  }
+
+// }
 }
 
 int main() {
