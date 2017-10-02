@@ -6,7 +6,7 @@ Bitboard is a **method for representing states** in game engine, and particularl
 
 It uses the **bit array data structure** and transform all usual searching/testing methods into **binary** and **logical** operations.
 
-![Banner](banner.png)
+![Banner](img/banner.png)
 
 ## What is this good for ?
 
