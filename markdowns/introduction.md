@@ -2,6 +2,7 @@
 
 ## Commonly used structures
 
+```math
 \frametitle{explanation}
 \begin{columns}
 \begin{column}{0.5\textwidth}
@@ -14,6 +15,7 @@
 \end{column}
 \end{columns}
 \end{frame}
+```
 
 ## BitArray: binary data structure
 
