@@ -76,6 +76,10 @@ struct State {
 * `board` variable represents all tiles on the board _(1 = tile, 0 = empty)_
 * `position` variable represents current player tiles _(1 = tile, 0 = empty)_
 
+In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
+
+If we want to know the opponent tiles position, we only need to make an exclusive or (XOR) between `board` and `position`. Very convenient, but it's only one of many strength of bitboards.
+
 # The Power of Bitboards
 
 As you can now imagine, we call a **Bitboard** the BitArray application in **2D board games**, and particularly in the game state representation.
