@@ -15,7 +15,7 @@ You have selected your algorithm, a minimax, or a Monte Carlo tree search for ex
 As a **representation of a game state**, you defined your board using a 2D array, or a 1D vector.
 
 ```math
-\begin{array}{lcr}
+\begin{array}{ccc}
 2D Array & 1D Vector & Dictionary\\
 \begin{bmatrix}
 0 & 1 & 1 \\
@@ -23,7 +23,7 @@ As a **representation of a game state**, you defined your board using a 2D array
 1 & 2 & 0
 \end{bmatrix} & \begin{bmatrix}
 0 & 1 & 1 & 2 & 1 & 2 & 1 & 2 & 0
-\end{bmatrix} & {0:0, 1:1, 2:1, 3:2, 4:1, 5:2, 6:1, 7:2, 8:0}
+\end{bmatrix} & \underbrace{0:0, 1:1, 2:1, 3:2, 4:1, 5:2, 6:1, 7:2, 8:0}
 \end{array}
 ```
 
