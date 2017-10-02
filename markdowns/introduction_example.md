@@ -1,169 +1,138 @@
-# Example: a Connect Four engine
+# Introduction to Bitboards
 
-In this section I will show an example of two Connect Four engines:
-* One uses 2D array data structure
-* The second uses a Bitboard data structure
+## Commonly used structures
 
-### Structures and methods
+Do you know the famous [Tic-tac-toe](https://fr.wikipedia.org/wiki/Tic-tac-toe) ?
 
-Only two structures will be useful:
-* `Move`: represent a move of the game
-* `State`: represent a state of the game (player to play and board representation)
+It's a simple game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
-The methods we will need to write are:
-* `void play(State * state, Move move)`: plays a move by directly modifying the state
-* `EndGame isEnd(State state)`: to know if the game is finished or not and what is the result
-* `vector<Move*> getMoves(State state)`: return the available moves for current player
+![Tictactoe](http://media.istockphoto.com/photos/tictactoe-picture-id544478622?k=6&m=544478622&s=612x612&w=0&h=xn90aBPDceZURVcW3CPHIfbMl641M7AaEnrcOeWwD3k=)
 
-And now let's code !
+Let's imagine that you are writting an artificial intelligence (AI) on this game.
 
-# First version: 2D vectors engine
+You have selected your algorithm, a minimax, or a Monte Carlo tree search for example. Unluckily, such algorithm need a high number of simulations and you're sceptical concerning the simulation engine you wrote.
 
-::: Just give me the code
-```C++ runnable
-#include "moteur.h"
 
-// Copier un état
-Etat * copieEtat( Etat * src ) {
-	Etat * etat = (Etat *)malloc(sizeof(Etat));
-  etat->joueur = etat->joueur;
-	uint i,j;
-	for (i=0; i< HAUTEUR; i++)
-		for (j=0; j<LARGEUR; j++)
-			etat->plateau[CELL(j,i)] = src->plateau[CELL(j,i)];
-	return etat;
-}
 
-// Etat initial
-Etat * etatInitial( void ) {
-	Etat * etat = (Etat *)malloc(sizeof(Etat));
-	uint i,j;
-	for (i=0; i< HAUTEUR; i++)
-		for (j=0; j<LARGEUR; j++)
-			etat->plateau[CELL(j,i)] = -1;
-	return etat;
-}
+# Game state representation
 
-void afficheJeu(Etat * etat) {
-	uint i,j;
-	char symbs[3] = ".OX";
-	printf("   |");
-	for ( j = 0; j < LARGEUR; j++)
-		printf(" %d |", j);
-	printf("\n");
-	printf("--------------------------------");
-	printf("\n");
+As a **representation of a game state**, you defined your board using a 2D array, or a 1D vector.
 
-	for(j=0; j < HAUTEUR; j++) {
-		printf(" %d |", j);
-		for ( i = 0; i < LARGEUR; i++)
-			printf(" %c |", symbs[etat->plateau[CELL(i,j)]+1]);
-		printf("\n");
-		printf("--------------------------------");
-		printf("\n");
-	}
-}
 
-// Demander à l'humain quel coup jouer
-uint demanderCoup() {
-	uint coup;
-	printf(" quelle colonne ? ") ;
-	scanf("%u",&coup);
-	return coup;
-}
+```math
+\begin{array}{ccc}
+2D Array & 1D Vector & Dictionary\\
+board: \begin{bmatrix}
+0 & 1 & 1 \\
+2 & 1 & 2 \\
+1 & 2 & 0
+\end{bmatrix} & board: \begin{bmatrix}
+0 & 1 & 1 & 2 & 1 & 2 & 1 & 2 & 0
+\end{bmatrix} & board: \left\{ (0,0):0, (0,1):1, (0,2):1, \\
+(1,0):2, (1,1):1, (1,2):2, \\
+(2,0):1, (2,1):2, (2,2):0 \right\}
+\end{array}
+```
 
-// Modifier l'état en jouant un coup
-// retourne 0 si le coup n'est pas possible
-uint jouerCoup(Etat* etat, uint col) {
-	// printf("test: %d\n", etat->plateau[CELL(col, HAUTEUR-1)] != -1);
-  if (etat->plateau[CELL(col, HAUTEUR-1)] != -1)
-    return 0;
-	// printf("ok\n");
-  for (int i=0; i<HAUTEUR; i++) {
-		if (etat->plateau[CELL(col, i)] == -1) {
-			etat->plateau[CELL(col, i)] = etat->joueur;
-			break;
-		}
-	}
-	etat->joueur = AUTRE_JOUEUR(etat->joueur);
-  return 1;
-}
+In order to get a non-ambiguous state representation, you probably added a `player` variable to know the player who should play this turn. Ideally, we would have something like this:
 
-// Retourne une liste de coups possibles à partir d'un etat
-// (tableau de pointeurs de coups se terminant par NULL)
-int * coupsPossibles( Etat * etat ) {
-	uint k = 0, col;
-	int *coups;
-	coups = (int *)malloc(sizeof(int)*(LARGEUR+1));
-	for (col=0; col<LARGEUR; col++) {
-	// printf("x %d, y %d, exp %d, cell %d\n", col, HAUTEUR-1, (HAUTEUR-1)*LARGEUR+col, CELL(col, HAUTEUR-1));
-		if (etat->plateau[CELL(col, HAUTEUR-1)] == -1) {
-			coups[k] = col;
-			k++;
-		}
-	}
-	coups[k] = -1;
-	return coups;
-}
-
-bool estGagnant(Etat * etat, uint joueur) {
-	uint i,j;
-
-	// horizontalCheck
-  for (j=0; j<HAUTEUR-3 ; j++ ){
-      for (i=0; i<LARGEUR; i++){
-          if (etat->plateau[CELL(i,j)] == (int)joueur && etat->plateau[CELL(i,j+1)] == (int)joueur && etat->plateau[CELL(i,j+2)] == (int)joueur && etat->plateau[CELL(i,j+3)] == (int)joueur){
-              return true;
-          }
-      }
-  }
-  // verticalCheck
-  for (i=0; i<LARGEUR-3 ; i++){
-      for (j=0; j<HAUTEUR; j++){
-          if (etat->plateau[CELL(i,j)] == (int)joueur && etat->plateau[CELL(i+1,j)] == (int)joueur && etat->plateau[CELL(i+2,j)] == (int)joueur && etat->plateau[CELL(i+3,j)] == (int)joueur){
-              return true;
-          }
-      }
-  }
-  // ascendingDiagonalCheck
-  for (i=3; i<LARGEUR; i++){
-      for (j=0; j<HAUTEUR-3; j++){
-          if (etat->plateau[CELL(i,j)] == (int)joueur && etat->plateau[CELL(i-1,j+1)] == (int)joueur && etat->plateau[CELL(i-2,j+2)] == (int)joueur && etat->plateau[CELL(i-3,j+3)] == (int)joueur)
-              return true;
-      }
-  }
-  // descendingDiagonalCheck
-  for (i=3; i<LARGEUR; i++){
-      for (j=3; j<HAUTEUR; j++){
-          if (etat->plateau[CELL(i,j)] == (int)joueur && etat->plateau[CELL(i-1,j-1)] == (int)joueur && etat->plateau[CELL(i-2,j-2)] == (int)joueur && etat->plateau[CELL(i-3,j-3)] == (int)joueur)
-              return true;
-      }
-  }
-  return false;
-
-}
-
-bool estPartieNulle(Etat * etat) {
-	uint cell;
-	for (cell=0; cell<LARGEUR*HAUTEUR; cell++) {
-		if (etat->plateau[cell] == -1)
-			return false;
-	}
-	return true;
-}
-// Test si l'état est un état terminal
-// et retourne NON, MATCHNUL, ORDI_GAGNE ou HUMAIN_GAGNE
-
-FinDePartie testFin(Etat * etat) {
-	if (estGagnant(etat, 1))
-    return ORDI_GAGNE;
-  else if (estGagnant(etat, 0))
-    return HUMAIN_GAGNE;
-  else if (estPartieNulle(etat))
-    return MATCHNUL;
-  return NON;
+```C++
+struct State {
+    int player;
+    int board[3][3];
 }
 ```
-:::
 
-# Second version: Bitboard engine
+In reality you juste made a **very important choice** that can eventually result in a **considerable dropout of your program performances**.
+
+> _Where is the problem with this 2D array_ ?
+
+No problem, that's a very good choice, but let's make something different and see if we could **replace this array by a much simpler integer**.
+
+
+# BitArray: binary data structure
+
+Let me introduce you **_BitArray_**:
+
+```math
+\begin{array}{ccc}
+BitArray \\
+board = \begin{bmatrix}
+0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & .. & 0
+\end{bmatrix} \\
+position = \begin{bmatrix}
+0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & .. & 0
+\end{bmatrix}
+\end{array}
+```
+
+What happened here ? We have replaced our 2D array with **two 64bits integers**. Our structure should now be similar to the following:
+
+```C++
+typedef uint64_t Bitboard;
+
+struct State {
+    int player;
+    Bitboard board;
+    Bitboard position;
+}
+```
+
+#### Explanation:
+
+We've created a new type called "Bitboard" corresponding to a 64bits integer.
+* `board` variable represents all tiles on the board _(bit 1 = tile, bit 0 = empty)_
+* `position` variable represents current player tiles _(bit 1 = tile, bit 0 = empty)_
+
+> _Hey, why do I need more variables_ ?
+
+In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
+
+And here is the **first trick**: If we want to know the opponent tiles position, we only need to make an exclusive or (XOR) between `board` and `position`.
+
+```math
+opponentTiles = playerTiles \oplus boardTiles
+```
+
+Very convenient, but it's peanuts compared to the main bitboard features. Let's go a little farther.
+
+# The Power of Bitboards
+
+As you can now imagine, we call a **Bitboard** the BitArray application in **2D board games**, and particularly in the game state representation.
+
+Despite of the lack of clarity in the code, the goal is to **transform all usual state operations** (actions, end testing, depth/breadth search, scoring, state copy and other) **into binary and boolean operations**.
+
+I see I'm a little foggy, let's take examples and write some methods from our above example (the Tic-Tac-Toe).
+
+### Is winning position
+
+```C++
+bool isWinningPosition(State * state) {
+    uint64_t p = state->position
+    return (p==7) || (p==56) || (p==448) // rows
+        || (p==73) || (p==146) || (p==292) // columns
+        || (p==84) || (p==273)); // diags
+}
+```
+
+Pretty straightforward, isn't it ?
+
+Here is a non exhaustive list of usual methods in 2D board game (here for a Tic-Tac-Toe engine).
+
+| Name           | Method | Description |
+|:---------------|:-------|:------------|
+| `void putTile(int x, int y)` | `position |= (1 << y*WIDTH+x)` | Put a tile on the board at (x,y) |
+| `bool isDrawPosition()` | `return position == 511` | Whether a position is draw or not |
+| `bool isEmptyBoard()`   | `return position == 0` | Whether a board is empty or not |
+| `Bitboard getOppTiles()` | `return board ^ position` | Get the current player opponent tiles position |
+| `Bitboard getRow(int y)` | `return board & (UINT64_C(73) << y);` | Get a row on the board |
+| `Bitboard getColumn(int x)` | `return board & (UINT64_C(7) << WIDTH*x);` | Get a column on the board |
+| `void resetState()` | `board = 0; position = 0` | Reset the state to empty board |
+
+
+
+# Bitboards and simulation
+
+## Why should I care about bitboards ?
+
+When making some AI, Bitboards come to be a **method for state representation** using the **BitArray data structure**. No no, stay here, I will explain. But before that, let's make a brief introduction on agents and environments.
