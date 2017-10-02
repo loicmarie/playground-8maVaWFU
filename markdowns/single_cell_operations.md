@@ -23,6 +23,7 @@ In fact a bitboard representing a cell is a sequence with only **1 bit at 1** an
 Now that we know how are defined position and cells, we want to get the value at a position, and we want to get it with (x,y) cartesian coordinates.
 
 ```C++ runnable
+#include <cstdio>
 #include <cstdint>
 
 typedef uint64_t Bitboard;
@@ -36,58 +37,45 @@ typedef struct StateSt {
 namespace Utils {
   // autofold {
 
-  namespace Bitboard {
-
-    void displayBitboard(uint64_t position) {
-      int i,j;
-      uint64_t currPosition = position;
-        for(i=0; i < HEIGHT; i++) {
-            // printf("%lu\n", position);
-            // currPosition = position >> i;
-            for ( j = 0; j < WIDTH; j++) {
-              if (currPosition & 0x01) {
-                   printf("1");
-              } else {
-                   printf("0");
-              }
-              currPosition = currPosition >> 1;
+    void display(Bitboard position) {
+        int i,j;
+        Bitboard currPosition = position;
+      
+        printf("Bitboard display:\n\n");
+        for(i=0; i < 3; i++) {
+            for ( j = 0; j < 3; j++) {
+                printf((currPosition & 0x01) ? "1" : "0");
+                currPosition >>= 1;
             }
         }
-        printf("\n");
+        printf("\n\n");
     }
 
-    void display(uint64_t board, uint64_t position) { // TODO: afficher le jeu a l'endroit
+    void displayPretty(Bitboard position) {
         char symb;
-      int i,j;
-      uint64_t boardTmp = board,
-               positionTmp = position;
-      printf("   |");
-      for (j = 0; j < WIDTH; j++)
-        printf(" %d |", j);
-      printf("\n");
-      for (j=0; j<WIDTH+1; j++)
-          printf("----");
-      printf("\n");
-        for(i=0; i < HEIGHT; i++) {
-            // boardTmp = board >> i;
-            // positionTmp = position >> i;
+        int i,j;
+        Bitboard currPosition = position;
+        
+        printf("Bitboard pretty display:\n\n");
+        printf("   |");
+        for (j = 0; j < 3; j++)
+            printf(" %d |", j);
+        printf("\n");
+        for (j=0; j<4; j++)
+            printf("----");
+        printf("\n");
+        for(i=0; i < 3; i++) {
             printf(" %d |", i);
-            for ( j = 0; j < WIDTH; j++) {
-              if (positionTmp & 0x01) {
-                   symb = 'X';
-              } else {
-                   symb = '.';
-              }
-              printf(" %c |", symb);
-              boardTmp = boardTmp >> 1;
-              positionTmp = positionTmp >> 1;
+            for ( j = 0; j < 3; j++) {
+                printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
+                currPosition >>= 1;
             }
             printf("\n");
-          for (j=0; j<WIDTH+1; j++)
-              printf("----");
-          printf("\n");
+            for (j=0; j<4; j++)
+                printf("----");
+            printf("\n");
         }
-    }
+        printf("\n");
 
   }
 
@@ -95,6 +83,7 @@ namespace Utils {
 }
 
 int main() {
-    Bitboard cell;
+    Bitboard cell = 27;
+    Utils::displayPretty(cell);
 }
 ```
