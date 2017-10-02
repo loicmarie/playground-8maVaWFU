@@ -41,8 +41,8 @@ Work in progress.
 # Displaying board and position
 
 In the following sections, we will keep our **Tic-Tac-Toe** example. We will also need to display Bitboards if we want to well understand the different operations. Two type of displays will be useful:
-* a simple display, that shows the binary sequence
-* a pretty display, that shows the board representation
+* a simple display, that shows the **binary sequence**
+* a pretty display, that shows the **board representation**
 
 You are lucky, I already prepared these functions. In the following code, you get the state structure written in the previous section, and two functions `Utils::display(Bitboard position)` and `Utils::displayPretty(Bitboard position)`.
 
@@ -120,6 +120,6 @@ int main() {
 }
 ```
 
-Now we have all the required knowledges to bitboards manipulation. 
+Now we have all the required knowledges and tools to bitboards manipulation. 
 
 Let's make our first step in the next part.
