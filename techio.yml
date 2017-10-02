@@ -8,9 +8,11 @@ plan:
     statement: markdowns/tictactoe_example.md
 - title: II. Bitboard operations
   plan:
-  - title: II.1 Single cell operations
+  - title: II.1 Board and position
+    statement: markdowns/board_and_position.md
+  - title: II.2 Single cell operations
     statement: markdowns/single_cell_operations.md
-  - title: II.2 Multi cells operations
+  - title: II.3 Multi cells operations
     statement: markdowns/managing_entity.md
 projects:
   cpp:

@@ -1,26 +1,15 @@
-# II.1 Single cell operations
+# II.1 Board and position
 
-These functions will be very useful. We will now see how to:
-1. get the value of a cell
-2. set the value of a cell
+![Numerotation](img/numerotation.png)
 
-**Reminder**: in this tutorial (which uses C++), the `Bitboard` type has been defined as an unsigned 64bits integer (corresponding to the `uint64_t` type)
 
-# Cells and positions
+In the following sections, we will keep our **Tic-Tac-Toe** example. We will also need to display Bitboards if we want to well understand the different operations. Two type of displays will be useful:
+* a simple display, that shows the binary sequence
+* a pretty display, that shows the board representation
 
-We have said that a position is of type `Bitboard`. So how is defined a cell ?
+You are lucky, I already prepared these functions. In the following code, you get the state structure written in the previous section, and two functions `Utils::display(Bitboard position)` and `Utils::displayPretty(Bitboard position)`.
 
-Response is... a Bitboard ! Yes, that's pretty confusing.
-
-> _I don't get the difference ?_
-
-In fact a bitboard representing a cell is a sequence with only **1 bit at 1** and **the other at 0**. This type of binary vector is often used in different computing domains and is called "**one-hot encoding**".
-
-![Cell](img/cell.png)
-
-# Getting a cell
-
-Now that we know how are defined position and cells, we want to get the value at a position, and we want to get it with (x,y) cartesian coordinates.
+Display the board and try to change the `state.board` to get different positions.
 
 ```C++ runnable
 #include <cstdio>
@@ -88,6 +77,8 @@ namespace Utils {
 int main() {
     State state;
     state.board = 27;
+
     Utils::displayPretty(state.board);
+    Utils::display(state.board);
 }
 ```
