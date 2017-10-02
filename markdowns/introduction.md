@@ -45,6 +45,10 @@ struct State {
 
 In reality you juste made a **very important choice** that can eventually result in a **considerable dropout of your program performances**.
 
+> Where is the problem with this 2D array ?
+
+No problem, that's a very good choice, but let's make something different and see if we could **replace this array by a much simpler integer**. 
+
 
 # BitArray: binary data structure
 
@@ -79,6 +83,8 @@ struct State {
 We've created a new type called "Bitboard" corresponding to a 64bits integer.
 * `board` variable represents all tiles on the board _(bit 1 = tile, bit 0 = empty)_
 * `position` variable represents current player tiles _(bit 1 = tile, bit 0 = empty)_
+
+> Hey, why do I need more variables ?
 
 In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
 
