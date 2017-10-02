@@ -56,7 +56,7 @@ No problem, that's a very good choice, but let's make something different and se
 
 # <a name="bit-array"></a> The bit array data structure
 
-Let me introduce you to **_bit array_**:
+Keeping our previous example, let me introduce you to **_bit array_**:
 
 ```math
 \begin{array}{ccc}
