@@ -95,7 +95,7 @@ We've created a new type called "Bitboard" corresponding to a 64bits integer.
 
 > _Hey, why do I need more variables_ ?
 
-In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
+In bitboard representation, sometimes we need **more than one bitboard** (called **_bitmask_** we will get back on it later). In our case, the variable `position` has been added in complement.
 
 > _But how can I get the opponent tiles position_ ?
 
