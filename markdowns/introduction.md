@@ -88,7 +88,9 @@ We've created a new type called "Bitboard" corresponding to a 64bits integer.
 
 In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
 
-If we want to know the opponent tiles position, we only need to make an exclusive or (XOR) between `board` and `position`. Very convenient, but it's only one of many strength of bitboards.
+And here is the **first trick**: If we want to know the opponent tiles position, we only need to make an exclusive or (XOR) between `board` and `position`. 
+
+Very convenient, but it's peanuts compared to the main bitboard features. Let's go a little farther.
 
 # The Power of Bitboards
 
