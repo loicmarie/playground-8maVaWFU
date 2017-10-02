@@ -1,4 +1,8 @@
-# Introduction to Bitboards
+# I.1 Example: a Connect Four engine
+
+- [Game state representation](#game-state)
+- [The bit array data structure](#bit-array)
+- [The Power of Bitboards](#power-bitboards)
 
 ## Commonly used structures
 
@@ -14,7 +18,7 @@ You have selected your algorithm, a minimax, or a Monte Carlo tree search for ex
 
 
 
-# Game state representation
+# <a name="game-state"></a> Game state representation
 
 As a **representation of a game state**, you defined your board using a 2D array, or a 1D vector.
 
@@ -50,7 +54,7 @@ In reality you juste made a **very important choice** that can eventually result
 No problem, that's a very good choice, but let's make something different and see if we could **replace this array by a much simpler integer**.
 
 
-# The bit array data structure
+# <a name="bit-array"></a> The bit array data structure
 
 Let me introduce you to **_bit array_**:
 
@@ -98,7 +102,7 @@ opponentTiles = playerTiles \oplus boardTiles
 
 Very convenient, but it's peanuts compared to the main bitboard features. Let's go a little farther.
 
-# The Power of Bitboards
+# <a name="power-bitboards"></a> The Power of Bitboards
 
 As you can now imagine, we call a **Bitboard** the BitArray application in **2D board games**, and particularly in the game state representation.
 
