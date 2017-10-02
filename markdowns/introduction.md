@@ -45,7 +45,7 @@ struct State {
 
 In reality you juste made a **very important choice** that can eventually result in a **considerable dropout of your program performances**.
 
-> Where is the problem with this 2D array ?
+> _Where is the problem with this 2D array_ ?
 
 No problem, that's a very good choice, but let's make something different and see if we could **replace this array by a much simpler integer**. 
 
@@ -84,7 +84,7 @@ We've created a new type called "Bitboard" corresponding to a 64bits integer.
 * `board` variable represents all tiles on the board _(bit 1 = tile, bit 0 = empty)_
 * `position` variable represents current player tiles _(bit 1 = tile, bit 0 = empty)_
 
-> Hey, why do I need more variables ?
+> _Hey, why do I need more variables_ ?
 
 In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
 
@@ -140,7 +140,7 @@ When creating some artificial intelligence (AI), we have to carry about two thin
 
 ![Agent and environment](http://cs-alb-pc3.massey.ac.nz/notes/59302/fig02.01.gif)
 
-> That's cool ! Why are we talking about that ?
+> _That's cool ! Why are we talking about that_ ?
 
 The reason is: with bitboards we're not gonna make an agent, but an **efficient environment or simulation of the environment** in order to power up our simulation-based algorithms.
 
@@ -150,7 +150,7 @@ Creating an AI means creating an agent that is able to act reasonably in the env
 
 **The more states we simulate, the more accurate will be our agent**.
 
-> OK, so at the end of the tutorial I could get an AI better than the world chess champion ?
+> _OK, so at the end of the tutorial I could get an AI better than the world chess champion ?_
 
 Don't be on a rush !
 
