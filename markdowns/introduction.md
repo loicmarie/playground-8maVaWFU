@@ -53,10 +53,10 @@ Let me introduce you **_BitArray_**:
 \begin{array}{ccc}
 BitArray \\
 board = \begin{bmatrix}
-0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0
+0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & .. & 0
 \end{bmatrix} \\
 position = \begin{bmatrix}
-0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0
+0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0 & .. & 0
 \end{bmatrix}
 \end{array}
 ```
