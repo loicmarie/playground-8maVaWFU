@@ -6,7 +6,7 @@ Do you know the famous [Tic-tac-toe](https://fr.wikipedia.org/wiki/Tic-tac-toe) 
 
 It's a simple game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
-![Tictactoe](https://www.cookieshq.co.uk/images/2016/06/01/tic-tac-toe.png)
+![Tictactoe](http://doc.qt.io/qt-4.8/images/qml-tic-tac-toe-example.png)
 
 Let's imagine that you are writting an artificial intelligence (AI) on this game. 
 
