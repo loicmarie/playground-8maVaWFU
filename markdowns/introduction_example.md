@@ -88,6 +88,8 @@ We've created a new type called "Bitboard" corresponding to a 64bits integer.
 
 In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
 
+> _But how can I get the opponent tiles position_ ?
+
 And here is the **first trick**: If we want to know the opponent tiles position, we only need to make an exclusive or (XOR) between `board` and `position`.
 
 ```math
