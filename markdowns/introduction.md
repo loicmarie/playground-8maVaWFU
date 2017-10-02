@@ -48,10 +48,10 @@ Let me introduce you **_BitArray_**:
 ```math
 \begin{array}{ccc}
 BitArray \\
-\begin{bmatrix}
+board = \begin{bmatrix}
 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0
 \end{bmatrix} \\
-\begin{bmatrix}
+position = \begin{bmatrix}
 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0
 \end{bmatrix}
 \end{array}
@@ -62,9 +62,19 @@ What happened here ? We have replaced our 2D array with **two 64bits integers**.
 ```C++
 struct State {
     int player;
-    int board[3][3];
+    uint64_t board;
+    uint64_t position;
 }
 ```
+
+#### Explanation:
+
+* `board` variable represents all tiles on the board _(1 = tile, 0 = empty)_
+* `position` variable represents current player tiles _(1 = tile, 0 = empty)_
+
+# The Power of Bitboards
+
+
 
 
 
