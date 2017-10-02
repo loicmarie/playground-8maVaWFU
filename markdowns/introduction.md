@@ -1,8 +1,12 @@
 # Introduction
 
+## What is a Bitboard ?
+
 Bitboard is a **method for representing states** in game engine, and particularly in **2D board games**. 
 
 It uses the **bit array data structure** and transform all usual searching/testing methods into **binary** and **logical** operations.
+
+## What is this good for ?
 
 The **strength** of Bitboards are:
 1. using only one bit where common data structure use one byte
@@ -15,6 +19,8 @@ This data structure is very often used in famous 2D board games like:
 * [Connect Four](https://en.wikipedia.org/wiki/Connect_Four)
 * [The Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 * Many word games
+
+## Just give me the code
 
 If you already know why you are here, you can **go to the first section** and see a short example of bitboard application.
 
