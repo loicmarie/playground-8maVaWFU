@@ -78,9 +78,28 @@ struct State {
 
 # The Power of Bitboards
 
+As you can now imagine, we call a **Bitboard** the BitArray application in 2D board games, and particularly in the game state representation.
 
+Despite of the lack of clarity in the code, the goal is to transform all usual state operations (actions, end testing, depth/breadth search, scoring, state copy and other) into binary operations. I see I'm a little foggy, let's take examples and write some methods from our above example.
 
+## Is winning position
 
+```C++
+bool isWinningPosition(State * state) {
+    uint64_t p = state->position
+    return (p==7) | (p==56) | (p==448) // rows
+         | (p==73) | (p==146) | (p==292) // columns
+         | (p==84) | (p==273)); // diags
+}
+```
+
+## Is draw position
+
+```C++
+bool isDrawPosition(State * state) {
+    return state->board == 511;
+}
+```
 
 # Bitboards and simulation
 
