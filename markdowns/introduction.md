@@ -39,9 +39,34 @@ struct State {
 }
 ```
 
-In reality you juste made a very important choice that can eventually result in a considerable dropout of your program performances.
+In reality you juste made a **very important choice** that can eventually result in a **considerable dropout of your program performances**.
 
 ## BitArray: binary data structure
+
+Let me introduce you **_BitArray_**:
+
+```math
+\begin{array}{ccc}
+BitArray \\
+\begin{bmatrix}
+0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0
+\end{bmatrix} \\
+\begin{bmatrix}
+0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 0
+\end{bmatrix}
+\end{array}
+```
+
+What happened here ? We have replaced our 2D array with **two 64bits integers**. Our structure should now be similar to the following:
+
+```C++
+struct State {
+    int player;
+    int board[3][3];
+}
+```
+
+
 
 # Bitboards and simulation
 
