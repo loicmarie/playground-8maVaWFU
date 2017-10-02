@@ -23,7 +23,8 @@ As a **representation of a game state**, you defined your board using a 2D array
 1 & 2 & 0
 \end{bmatrix} & \begin{bmatrix}
 0 & 1 & 1 & 2 & 1 & 2 & 1 & 2 & 0
-\end{bmatrix} & \left\{ (0,0):0, (0,1):1, (0,2):1, (1,0):2, (1,1):1, (1,2):2, (2,0):1, (2,1):2, (2,2):0 \right\}
+\end{bmatrix} & \left\{ (0,0):0, (0,1):1, (0,2):1, (1,0):2, (1,1):1, \\
+(1,2):2, (2,0):1, (2,1):2, (2,2):0 \right\}
 \end{array}
 ```
 
