@@ -2,14 +2,14 @@
 
 In the previous chapter, **we used a 3x3 board** according to the Tic-Tac-Toe rules.
 
-Considering the integers we use have **exactly 64 bits**, we can ask ourselves:
+Be `N = HEIGHT * WIDTH` the number of cells of the board. Considering the integers we use have **exactly 64 bits**, we can ask ourselves:
 
-* How to handle board with `HEIGHT * WIDTH **< 64**` ?
-* How to handle board with `HEIGHT * WIDTH **> 64**` ?
+* How to handle board with `N **< 64**` ?
+* How to handle board with `N **> 64**` ?
 
 Before answering this question, we should see **how bits are numeroted in 2D space**.
 
-# Bits position in 2D space
+# Bits position in 2D space with N <= 64
 
 In this tutorial, we use the **Big Endian notation**. All the formulas you will read later will entirely depends on this frame of reference.
 
@@ -30,6 +30,15 @@ Reading the **bits from right to left** corresponds to reading the **2D cells fr
 
 ![Numerotation](img/numerotation.png)
 
+In the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
+
+
+# Bits position with N > 64
+
+Work in progress.
+
+
+# Displaying board and position
 
 In the following sections, we will keep our **Tic-Tac-Toe** example. We will also need to display Bitboards if we want to well understand the different operations. Two type of displays will be useful:
 * a simple display, that shows the binary sequence
@@ -110,3 +119,7 @@ int main() {
     Utils::display(state.board);
 }
 ```
+
+Now we have all the required knowledges to bitboards manipulation. 
+
+Let's make our first step in the next part.
