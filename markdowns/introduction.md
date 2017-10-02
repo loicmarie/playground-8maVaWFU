@@ -90,6 +90,10 @@ In bitboard representation, sometimes we need **more than one bitboard** (we wil
 
 And here is the **first trick**: If we want to know the opponent tiles position, we only need to make an exclusive or (XOR) between `board` and `position`. 
 
+```math
+opponentTiles = playerTiles ^ board
+```
+
 Very convenient, but it's peanuts compared to the main bitboard features. Let's go a little farther.
 
 # The Power of Bitboards
