@@ -1,12 +1,13 @@
 # I.1 Example: a Connect Four engine
 
+- [The Tic-Tac-Toe Game](#tictactoe)
 - [Game state representation](#game-state)
 - [The bit array data structure](#bit-array)
 - [The Power of Bitboards](#power-bitboards)
 
-## Commonly used structures
+# <a name="tictactoe"></a> The Tic-Tac-Toe Game
 
-Do you know the famous [Tic-tac-toe](https://fr.wikipedia.org/wiki/Tic-tac-toe) ?
+Do you know the famous [Tic-tac-toe](https://www.tenstickers.be/stickers/img/preview/sticker-decoratif-morpion-pour-mac-2609.png) ?
 
 It's a simple game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
