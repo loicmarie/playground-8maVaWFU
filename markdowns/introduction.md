@@ -52,13 +52,13 @@ Creating an AI means creating an agent that is able to act reasonably in the env
 
 Don't be on a rush ! For two reasons:
 
-##### 1. You should always improve the algorithm first
+##### 1. You should always **improve the algorithm first**
 
 Improving the number of states simulations is very important, **but not as many as improving the algorithm**. 
 
 This tutorial will be useful only once you have had an efficient algorithm.
 
-##### 2. Bitboards are not the response to everything
+##### 2. Bitboards are **not the response to everything**
 
 Bitboards cannot be implemented without a lot of condition, and is sometimes very fastidious to set up. 
 
