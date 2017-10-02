@@ -39,7 +39,7 @@ In order to get a non-ambiguous state representation, you probably added a `play
 ```C++
 struct State {
     int player;
-    int board[3][3];
+    int board[3][3]; // all tiles: (0 for empty, 1 for 1st player tile, 2 for 2nd player tile)
 }
 ```
 
@@ -73,8 +73,8 @@ typedef uint64_t Bitboard;
 
 struct State {
     int player;
-    Bitboard board;
-    Bitboard position;
+    Bitboard board; // all tiles: (0 for empty, 1 for existing tile)
+    Bitboard position; // current player tiles: (0 for empty, 1 for existing tile)
 }
 ```
 
