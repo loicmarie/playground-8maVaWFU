@@ -29,9 +29,11 @@ Now that we know how are defined position and cells, we want to get the value at
 typedef uint64_t Bitboard;
 
 typedef struct StateSt {
+  // autofold {
     int player;
     Bitboard board; // all tiles: (0 for empty, 1 for existing tile)
     Bitboard position; // current player tiles: (0 for empty, 1 for existing tile)
+  // }
 } State;
 
 namespace Utils {
