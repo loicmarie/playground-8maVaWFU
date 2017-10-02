@@ -16,7 +16,7 @@ Response is... a Bitboard ! Yes, that's pretty confusing.
 
 In fact a bitboard representing a cell is a sequence with only **1 bit at 1** and **the other at 0**. This type of binary vector is often used in different computing domains and is called "**one-hot encoding**".
 
-!(Cell)[img/cell.png]
+![Cell](img/cell.png)
 
 # Get a cell
 
