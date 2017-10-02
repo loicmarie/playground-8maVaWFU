@@ -5,7 +5,7 @@ plan:
   - title: I.1 Bitboards and simulation
     statement: markdowns/introduction.md
   - title: 'I.2 Example: a Tic-Tac-Toe engine'
-    statement: markdowns/introduction_example.md
+    statement: markdowns/tictactoe_example.md
 - title: II. Bitboard operations
   plan:
   - title: II.1 Single cell operations
