@@ -22,13 +22,13 @@ As a **representation of a game state**, you defined your board using a 2D array
 ```math
 \begin{array}{ccc}
 2D Array & 1D Vector & Dictionary\\
-\begin{bmatrix}
+board: \begin{bmatrix}
 0 & 1 & 1 \\
 2 & 1 & 2 \\
 1 & 2 & 0
-\end{bmatrix} & \begin{bmatrix}
+\end{bmatrix} & board: \begin{bmatrix}
 0 & 1 & 1 & 2 & 1 & 2 & 1 & 2 & 0
-\end{bmatrix} & \left\{ (0,0):0, (0,1):1, (0,2):1, (1,0):2, (1,1):1, \\
+\end{bmatrix} & board: \left\{ (0,0):0, (0,1):1, (0,2):1, (1,0):2, (1,1):1, \\
 (1,2):2, (2,0):1, (2,1):2, (2,2):0 \right\}
 \end{array}
 ```
