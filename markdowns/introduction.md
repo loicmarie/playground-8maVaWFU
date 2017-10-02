@@ -11,6 +11,7 @@ It's a simple game for two players, X and O, who take turns marking the spaces i
 Let's imagine that you are writting an artificial intelligence (AI) on this game. 
 
 You have selected your algorithm, a minimax, or a Monte Carlo tree search for example. Unluckily, such algorithm need a high number of simulations and you're sceptical concerning the simulation engine you wrote.
+___
 
 ## Game state representation
 
@@ -41,6 +42,7 @@ struct State {
 ```
 
 In reality you juste made a **very important choice** that can eventually result in a **considerable dropout of your program performances**.
+___
 
 ## BitArray: binary data structure
 
