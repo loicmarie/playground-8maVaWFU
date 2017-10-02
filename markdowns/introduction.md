@@ -78,9 +78,11 @@ struct State {
 
 # The Power of Bitboards
 
-As you can now imagine, we call a **Bitboard** the BitArray application in 2D board games, and particularly in the game state representation.
+As you can now imagine, we call a **Bitboard** the BitArray application in **2D board games**, and particularly in the game state representation.
 
-Despite of the lack of clarity in the code, the goal is to transform all usual state operations (actions, end testing, depth/breadth search, scoring, state copy and other) into binary operations. I see I'm a little foggy, let's take examples and write some methods from our above example.
+Despite of the lack of clarity in the code, the goal is to **transform all usual state operations** (actions, end testing, depth/breadth search, scoring, state copy and other) **into binary and boolean operations**. 
+
+I see I'm a little foggy, let's take examples and write some methods from our above example (the Tic-Tac-Toe).
 
 ### Is winning position
 
@@ -93,30 +95,16 @@ bool isWinningPosition(State * state) {
 }
 ```
 
-| Test           | Method |
-|---------------:|-------:|
-| isDrawPosition | `return position == 511` |
-| isEmptyBoard   | `return position == 0` |
-
-### Is draw position
-
-```C++
-bool isDrawPosition(State * state) {
-    return state->board == 511;
-}
-```
-
-Very straightforward, isn't it ? :blush:
+Pretty straightforward, isn't it ?
 
 The same happens if you want know whether the board is empy or not (but it should not be useful here)
 
-### Is board empty
-
-```C++
-bool isEmptyBoard(State * state) {
-    return state->board == 0;
-}
-```
+| Test           | Method |
+|:---------------|:------:|
+| `bool isDrawPosition(State * state)` | `return state->position == 511` |
+| `bool isEmptyBoard(State * state)`   | `return state->position == 0` |
+| `bitboard getOpponentTiles(State * state)` | `return state->board ^ state->position` |
+| `bitboard getRow(State * state, int row)` | `return state->board ^ state->position` |
 
 # Bitboards and simulation
 
