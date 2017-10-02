@@ -33,6 +33,7 @@ typedef struct StateSt {
     int player;
     Bitboard board; // all tiles: (0 for empty, 1 for existing tile)
     Bitboard position; // current player tiles: (0 for empty, 1 for existing tile)
+    StateSt() : player(0), board(0), position(0) {}
   // }
 } State;
 
@@ -85,7 +86,8 @@ namespace Utils {
 }
 
 int main() {
-    Bitboard cell = 27;
-    Utils::displayPretty(cell);
+    State state;
+    state.board = 27;
+    Utils::displayPretty(state.board);
 }
 ```
