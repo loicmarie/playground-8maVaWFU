@@ -4,9 +4,17 @@ Bitboard is a **method for representing states** in game engine, and particularl
 
 It uses the **bit array data structure** and transform all usual searching/testing methods into **binary** and **logical** operations.
 
-It allows to:
+With Bitboards, you can:
 1. use only one bit where common data structure use one byte
 2. perform high efficiency operations
+3. operate on all squares in parallel using bitwise instructions
+
+This data structure is very often used in famous 2D board games like:
+* Chess
+* Othello (Reversi)
+* Connect Four
+* (The Game of Life)[https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life]
+* Many word games
 
 If you already know why you are here, you can go to the first section and see a short example of bitboard application.
 
@@ -38,13 +46,13 @@ Creating an AI means creating an agent that is able to act reasonably in the env
 
 Don't be on a rush ! For two reasons:
 
-#### You should always improve the algorithm first
+##### 1. You should always improve the algorithm first
 
 Improving the number of states simulations is very important, **but not as many as improving the algorithm**. 
 
 This tutorial will be useful only once you have had an efficient algorithm.
 
-#### Bitboards are not the response to everything
+##### 2. Bitboards are not the response to everything
 
 Bitboards cannot be implemented without a lot of condition, and is sometimes very fastidious to set up. 
 
