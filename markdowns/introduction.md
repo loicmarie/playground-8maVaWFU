@@ -64,17 +64,20 @@ position = \begin{bmatrix}
 What happened here ? We have replaced our 2D array with **two 64bits integers**. Our structure should now be similar to the following:
 
 ```C++
+typedef uint64_t Bitboard;
+
 struct State {
     int player;
-    uint64_t board;
-    uint64_t position;
+    Bitboard board;
+    Bitboard position;
 }
 ```
 
 #### Explanation:
 
-* `board` variable represents all tiles on the board _(1 = tile, 0 = empty)_
-* `position` variable represents current player tiles _(1 = tile, 0 = empty)_
+We've created a new type called "Bitboard" corresponding to a 64bits integer.
+* `board` variable represents all tiles on the board _(bit 1 = tile, bit 0 = empty)_
+* `position` variable represents current player tiles _(bit 1 = tile, bit 0 = empty)_
 
 In bitboard representation, sometimes we need **more than one bitboard** (we will see why later). In our case, the variable `position` has been added in complement.
 
@@ -355,6 +358,10 @@ void display(uint64_t board, uint64_t position) { // TODO: afficher le jeu a l'e
 uint64_t moveRight(uint64_t position) {
     return position >> 5;
 }
+
+<!--uint64_t putTile(int x, int y) {
+    (1 
+}-->
 
 int main()
 {
