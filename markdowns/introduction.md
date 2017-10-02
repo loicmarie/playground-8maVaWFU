@@ -3,14 +3,21 @@
 ## Commonly used structures
 
 ```math
-\begin{columns}
-\begin{column}{0.5\textwidth}
-   some text here some text here some text here some text here some text here
-\end{column}
-\begin{column}{0.5\textwidth}  %%<--- here
-   some text here some text here some text here some text here some text here
-\end{column}
-\end{columns}
+\usepackage{multicol}
+ 
+\begin{document}
+\begin{multicols}{3}
+[
+\section{First Section}
+All human things are subject to decay. And when fate summons, Monarchs must obey.
+]
+Hello, here is some text without a meaning.  This text should show what 
+a printed text will look like at this place.
+If you read this text, you will get no information.  Really?  Is there 
+no information?  Is there...
+\end{multicols}
+ 
+\end{document}
 ```
 
 ## BitArray: binary data structure
