@@ -7,11 +7,11 @@
 
 # <a name="tictactoe"></a> The Tic-Tac-Toe Game
 
-Do you know the famous [Tic-tac-toe](https://www.tenstickers.be/stickers/img/preview/sticker-decoratif-morpion-pour-mac-2609.png) ?
+Do you know the famous [Tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) ?
 
 It's a simple game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
-![Tictactoe](http://media.istockphoto.com/photos/tictactoe-picture-id544478622?k=6&m=544478622&s=612x612&w=0&h=xn90aBPDceZURVcW3CPHIfbMl641M7AaEnrcOeWwD3k=)
+![Tictactoe](https://www.tenstickers.be/stickers/img/preview/sticker-decoratif-morpion-pour-mac-2609.png)
 
 Let's imagine that you are writting an artificial intelligence (AI) on this game.
 
