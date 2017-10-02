@@ -4,7 +4,11 @@
 
 ```math
 \begin{array}{lcr}
-item11 & item12 & item1n\\
+\begin{bmatrix}
+0 & 1 & 1 \\
+2 & 1 & 2 \\
+1 & 2 & 0
+\end{bmatrix} & item12 & item1n\\
 item21 & item22 & item2n\\
 itemm1 & itemm2 & itemmn
 \end{array}
