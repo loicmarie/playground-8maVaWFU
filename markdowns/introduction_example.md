@@ -50,13 +50,13 @@ In reality you juste made a **very important choice** that can eventually result
 No problem, that's a very good choice, but let's make something different and see if we could **replace this array by a much simpler integer**.
 
 
-# BitArray: binary data structure
+# The bit array data structure
 
-Let me introduce you **_BitArray_**:
+Let me introduce you **_bit array_**:
 
 ```math
 \begin{array}{ccc}
-BitArray \\
+Bit array \\
 board = \begin{bmatrix}
 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 0 & .. & 0
 \end{bmatrix} \\
