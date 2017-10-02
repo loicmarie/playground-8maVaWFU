@@ -11,9 +11,9 @@ We will begin with talking about writting a game engine and describing the game 
 
 # <a name="tictactoe"></a> The Tic-Tac-Toe Game
 
-Do you know the famous [Tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) ?
+Do you know the famous [Tic-tac-toe](https://en.wikipedia.org/wiki/Tic-tac-toe) ? I bet you do !
 
-It's a simple game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+No ? It's a simple game for two players, X and O, who take turns marking the spaces in a **3×3 grid**. The player who succeeds in placing **three of their marks** in a horizontal, vertical, or diagonal row wins the game.
 
 ![Tictactoe](https://www.tenstickers.be/stickers/img/preview/sticker-decoratif-morpion-pour-mac-2609.png)
 
@@ -52,7 +52,7 @@ struct State {
 }
 ```
 
-In reality you juste made a **very important choice** that can eventually result in a **considerable dropout of your program performances**.
+In reality you juste made a very important choice. It could eventually result in a **considerable dropout** of your program performances.
 
 > _Where is the problem with this 2D array_ ?
 
@@ -132,10 +132,19 @@ Here is a non exhaustive list of usual methods in 2D board game (here for a Tic-
 
 | Name           | Method | Description |
 |:---------------|:-------|:------------|
-| ```C++ void putTile(int x, int y)``` | `position |= (1 << y*WIDTH+x)` | Put a tile on the board at (x,y) |
+| `void putTile(int x, int y)` | `position |= (1 << y*WIDTH+x)` | Put a tile on the board at (x,y) |
 | `bool isDrawPosition()` | `return position == 511` | Whether a position is draw or not |
 | `bool isEmptyBoard()`   | `return position == 0` | Whether a board is empty or not |
 | `Bitboard getOppTiles()` | `return board ^ position` | Get the current player opponent tiles position |
 | `Bitboard getRow(int y)` | `return board & (UINT64_C(73) << y);` | Get a row on the board |
 | `Bitboard getColumn(int x)` | `return board & (UINT64_C(7) << WIDTH*x);` | Get a column on the board |
 | `void resetState()` | `board = 0; position = 0` | Reset the state to empty board |
+
+Now that you have seen some bitboards features, let's get into theory ! 
+
+# What has been done so far
+
+1. We have learnt the Tic-Tac-Toe rules (but it's not very important...)
+2. We have listed the main manners to represent the state of a 2D board game (2D array, 1D vector, dictionary and other)
+3. We have introduced the bit array data structure
+4. We have seen how bitboards use this structure to handle state representation with bits and state manipulation with binary and logical operators
