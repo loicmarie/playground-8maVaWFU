@@ -2,18 +2,41 @@
 
 ## Commonly used structures
 
+Do you know the famous [Tic-tac-toe](https://fr.wikipedia.org/wiki/Tic-tac-toe) ?
+
+It's a simple game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
+
+![Tictactoe](https://www.cookieshq.co.uk/images/2016/06/01/tic-tac-toe.png)
+
+Let's imagine that you are writting an artificial intelligence (AI) on this game. 
+
+You have selected your algorithm, a minimax, or a Monte Carlo tree search for example. Unluckily, such algorithm need a high number of simulations and you're sceptical concerning the simulation engine you wrote.
+
+As a **representation of a game state**, you defined your board using a 2D array, or a 1D vector.
+
 ```math
 \begin{array}{lcr}
-2D array & 1D vector & item1n\\
+2D Array & 1D Vector \\
 \begin{bmatrix}
 0 & 1 & 1 \\
 2 & 1 & 2 \\
 1 & 2 & 0
 \end{bmatrix} & \begin{bmatrix}
 0 & 1 & 1 & 2 & 1 & 2 & 1 & 2 & 0
-\end{bmatrix} & item2n
+\end{bmatrix}
 \end{array}
 ```
+
+In order to get a non-ambiguous state representation, you probably added a `player` variable to know the player who should play this turn. Ideally, we would have something like this:
+
+```C++
+struct State {
+    int player;
+    int board[3][3];
+}
+```
+
+In reality you juste made a very important choice that can eventually result in a considerable dropout of your program performances.
 
 ## BitArray: binary data structure
 
