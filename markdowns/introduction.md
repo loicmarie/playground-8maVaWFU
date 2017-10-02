@@ -120,8 +120,9 @@ Here is a non exhaustive list of usual methods in 2D board game (here for a Tic-
 | `void putTile(int x, int y)` | `position |= (1 << y*WIDTH+x)` | Put a tile on the board at (x,y) |
 | `bool isDrawPosition()` | `return position == 511` | Whether a position is draw or not |
 | `bool isEmptyBoard()`   | `return position == 0` | Whether a board is empty or not |
-| `bitboard getOppTiles()` | `return board ^ position` | Get the current player opponent tiles position |
-| `bitboard getRow(int row)` | `return position & (UINT64_C(73) << y);` | Get a row on the board |
+| `Bitboard getOppTiles()` | `return board ^ position` | Get the current player opponent tiles position |
+| `Bitboard getRow(int y)` | `return board & (UINT64_C(73) << y);` | Get a row on the board |
+| `Bitboard getColumn(int x)` | `return board & (UINT64_C(7) << WIDTH*x);` | Get a column on the board |
 | `void resetState()` | `board = 0; position = 0` | Reset the state to empty board |
 
 
