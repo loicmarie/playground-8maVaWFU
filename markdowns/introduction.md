@@ -24,7 +24,7 @@ This data structure is very often used in famous 2D board games like:
 
 If you already know why you are here, you can **go to the first section** and see a short example of bitboard application.
 
-Otherwise, you should probably **read the next section** about the importance of making a good game engine in Artificial Intelligence (AI) concern.
+Otherwise, you should probably **read the following** about the importance of making a good game engine in Artificial Intelligence (AI) concern.
 
 # A word about simulation (optional)
 
@@ -44,11 +44,11 @@ With bitboards we're not gonna make an agent, but an **efficient perception of t
 
 ## The relative importance of simulations
 
-Creating an AI means creating an agent that is able to act reasonably in the environment. In most of the currently existing intelligent algorithms, **we need to simulate the environment response** to an agent action.
+As said above, an efficient algorithm will sometimes need a high rate of simulations. The rule is:
 
 **The more states we simulate, the more accurate will be our agent**.
 
-> So, at the end of the tutorial I could make an AI better than the world chess champion ?_
+> _So, I will learn to make an AI better than the world chess champion ?_
 
 Don't be on a rush ! For two reasons:
 
@@ -60,6 +60,6 @@ This tutorial will be useful only once you have had an efficient algorithm.
 
 ##### 2. Bitboards are **not the response to everything**
 
-Bitboards cannot be implemented without a lot of condition, and is sometimes very fastidious to set up. 
+Bitboards cannot be implemented without a **lot of condition**, and is sometimes very fastidious to set up. 
 
 However, it remains a powerful tool that you should know about !
