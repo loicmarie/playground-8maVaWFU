@@ -13,12 +13,12 @@ Before answering this question, we should see **how bits are numeroted in 2D spa
 
 In this tutorial, we use the **Big Endian notation**. All the formulas you will read later will entirely depends on this frame of reference.
 
-```
+<p>
 Reminder: Endianness
 
 Big Endian notation: the first bit is the biggest. **ex**: 1101 (base 2) = 1x2^3 + 1x2^2 + 0x2^1 + 1x2^0 = 13 (base 10)
 Little Endian notation: the last bit is the biggest **ex**: 1101 (base 2) = 1x2^0 + 1x2^1 + 0x2^2 + 1x2^3 = 11 (base 10)
-```
+</p>
 
 Reading the **bits from right to left** corresponds to reading the **2D cells from left to right and from top to bottom**
 
