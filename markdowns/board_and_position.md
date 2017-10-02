@@ -17,12 +17,12 @@ In this tutorial, we use the **Big Endian notation**. All the formulas you will 
 
 **Big Endian** notation: the first bit is the biggest. 
 ```math
-1101_2 = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 13_10
+1101_2 = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 13_1_0
 ```
 
 **Little Endian** notation: the last bit is the biggest 
 ```math
-1101_2 = 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 = 11_10
+1101_2 = 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 = 11_1_0
 ```
 :::
 
