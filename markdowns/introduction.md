@@ -82,7 +82,7 @@ As you can now imagine, we call a **Bitboard** the BitArray application in 2D bo
 
 Despite of the lack of clarity in the code, the goal is to transform all usual state operations (actions, end testing, depth/breadth search, scoring, state copy and other) into binary operations. I see I'm a little foggy, let's take examples and write some methods from our above example.
 
-## Is winning position
+### Is winning position
 
 ```C++
 bool isWinningPosition(State * state) {
@@ -93,11 +93,23 @@ bool isWinningPosition(State * state) {
 }
 ```
 
-## Is draw position
+### Is draw position
 
 ```C++
 bool isDrawPosition(State * state) {
     return state->board == 511;
+}
+```
+
+Very straightforward, isn't it ? :blush:
+
+The same happens if you want know whether the board is empy or not (but it should not be useful here)
+
+### Is board empty
+
+```C++
+bool isEmptyBoard(State * state) {
+    return state->board == 0;
 }
 ```
 
