@@ -1,4 +1,4 @@
-# I.1 Example: a Connect Four engine
+# I.1 Example: a Tic-Tac-Toe engine
 
 That was a boring introduction, but now let's look at some code.
 
