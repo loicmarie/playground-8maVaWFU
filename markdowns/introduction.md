@@ -4,13 +4,14 @@
 
 ```math
 \begin{array}{lcr}
+2D array & 1D vector & item1n\\
 \begin{bmatrix}
 0 & 1 & 1 \\
 2 & 1 & 2 \\
 1 & 2 & 0
-\end{bmatrix} & item12 & item1n\\
-item21 & item22 & item2n\\
-itemm1 & itemm2 & itemmn
+\end{bmatrix} & \begin{bmatrix}
+0 & 1 & 1 & 2 & 1 & 2 & 1 & 2 & 0
+\end{bmatrix} & item2n
 \end{array}
 ```
 
