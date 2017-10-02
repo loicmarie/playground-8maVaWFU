@@ -295,8 +295,8 @@ Many games can be represented using bitboards:
 ```C++ runnable
 #include <iostream>
 
-#define WIDTH 8
-#define HEIGHT 8
+#define WIDTH 3
+#define HEIGHT 3
 
 using namespace std;
 
@@ -359,18 +359,16 @@ uint64_t moveRight(uint64_t position) {
     return position >> 5;
 }
 
-<!--uint64_t putTile(int x, int y) {
-    (1 
-}-->
+uint64_t putTile(uint64_t position, int x, int y) {
+    return (1 << y*3+x);
+} 
 
 int main()
 {
-    uint64_t position = 39685902827520;
-    displayBitboard(position);
-    display(0, position);
-    position = moveRight(position);
+    uint64_t position = 0;
     displayBitboard(position);
     printf("\n");
+    position = putTile(position, 2,2);
     display(0, position);
     // cout << test << endl;
     return 0;
