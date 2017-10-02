@@ -1,16 +1,16 @@
 title: Bitboards basis
 plan:
-- title: Introduction to Bitboards
+- title: I. Introduction to Bitboards
   plan:
-  - title: Bitboards and simulation
+  - title: I.1 Bitboards and simulation
     statement: markdowns/introduction.md
-  - title: 'I.1 Example: a Tic-Tac-Toe engine'
+  - title: 'I.2 Example: a Tic-Tac-Toe engine'
     statement: markdowns/introduction_example.md
-- title: Bitboard operations
+- title: II. Bitboard operations
   plan:
-  - title: Board representation
-    statement: markdowns/board.md
-  - title: Managing entity
+  - title: II.1 Single cell operations
+    statement: markdowns/single_cell_operations.md
+  - title: II.2 Multi cells operations
     statement: markdowns/managing_entity.md
 projects:
   cpp:

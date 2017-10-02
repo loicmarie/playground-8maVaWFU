@@ -1,8 +1,8 @@
-# Introduction
+# I.1 Bitboards and simulation
 
 ## What is a Bitboard ?
 
-Bitboard is a **method for representing states** in game engine, and particularly in **2D board games**. 
+Bitboard is a **method for representing states** in game engine, and particularly in **2D board games**.
 
 It uses the **bit array data structure** and transform all usual searching/testing methods into **binary** and **logical** operations.
 
@@ -54,12 +54,12 @@ Don't be on a rush ! For two reasons:
 
 ##### 1. You should always **improve the algorithm first**
 
-Improving the number of states simulations is very important, **but not as many as improving the algorithm**. 
+Improving the number of states simulations is very important, **but not as many as improving the algorithm**.
 
 This tutorial will be useful only once you have had an efficient algorithm.
 
 ##### 2. Bitboards are **not the response to everything**
 
-Bitboards cannot be implemented without a **lot of condition**, and is sometimes very fastidious to set up. 
+Bitboards cannot be implemented without a **lot of condition**, and is sometimes very fastidious to set up.
 
 However, it remains a powerful tool that you should know about !
