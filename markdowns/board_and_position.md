@@ -41,8 +41,15 @@ As shown in the above image, in the cases where the board is `N < 64`, we can st
 
 # Bits position with N > 64
 
-Work in progress.
+We're not going to study this case. However, you should know that bitboards can potentially **represent every 2D boards** regardless of the board size, using a method called **layers**.
 
+## Layers
+
+Layers consist in a list of unsigned 64bits integers. For example, if you need to represent a [Draughts](https://en.wikipedia.org/wiki/Draughts) board which is `N = 10x10 = 100 cells`, you will need two integers (128 bits).
+
+```math
+nbLayers = \ceil{N / 64}
+```
 
 # Displaying board and position
 
