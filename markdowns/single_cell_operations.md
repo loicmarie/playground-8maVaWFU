@@ -39,11 +39,43 @@ bitPosition = y * WIDTH + x
 \right .
 ```
 
-Now that we know how are defined position and cells, we want to get the value at a position.
+Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
 ```math
-bitValue = bitboard \mathrel{\&} (1 \ll y * WIDTH + x)
+bitboard \wedge (1 \ll y * WIDTH + x)
 ```
+
+# Setting a cell
+
+## Activating a bit
+
+```math
+bitboard = bitboard \vee (1 \ll (y * WIDTH + x))
+```
+
+We can write it up:
+
+```C++
+Bitboard setCell(Bitboard bitboard, int x, int y) {
+    return bitboard | (1 << (y * 3 + x));
+}
+```
+
+## Clearing a bit
+
+```math
+bitboard = bitboard \wedge ~(1 \ll (y * WIDTH + x))
+```
+
+We can write it up:
+
+```C++
+Bitboard clearCell(Bitboard bitboard, int x, int y) {
+    return bitboard & ~(1 << (y * 3 + x));
+}
+```
+
+# Test
 
 ```C++ runnable
 #include <cstdio>
