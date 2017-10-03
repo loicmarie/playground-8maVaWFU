@@ -31,11 +31,15 @@ bitPosition = y * WIDTH + x
 ## Bit position to cartesian coordinates
 
 ```math
-x = bitPosition \mod WIDTH
+x = bitPosition \mod WIDTH \\
 y = bitPosition \div WIDTH
 ```
 
-Now that we know how are defined position and cells, we want to get the value at a position, and we want to get it with (x,y) cartesian coordinates.
+Now that we know how are defined position and cells, we want to get the value at a position.
+
+```math
+bitValue = 
+```
 
 ```C++ runnable
 #include <cstdio>
