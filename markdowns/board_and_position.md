@@ -48,7 +48,7 @@ We're not going to study this case. However, you should know that bitboards can 
 Layers consist in a list of unsigned 64bits integers. For example, if you need to represent a [Draughts](https://en.wikipedia.org/wiki/Draughts) board which is `N = 10x10 = 100 cells`, you will need two integers (128 bits).
 
 ```math
-nbLayers = \ceil{N / 64}
+nbLayers = \ceil[\big]{\frac{N}{64}}
 ```
 
 # Displaying board and position
