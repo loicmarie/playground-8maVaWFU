@@ -32,15 +32,15 @@ bitPosition = y * WIDTH + x
 
 ```math
 \begin{array}{r c l}
-  x  & = & bitPosition \mod WIDTH \\
-  y  & = & bitPosition \div WIDTH
+  x  & = & bitPosition & \mod & WIDTH \\
+  y  & = & bitPosition & \div & WIDTH
 \end{array}
 ```
 
 Now that we know how are defined position and cells, we want to get the value at a position.
 
 ```math
-bitValue = bitboard & (1 << y * WIDTH + x)
+bitValue = bitboard \mathrel{\&} (1 \ll y * WIDTH + x)
 ```
 
 ```C++ runnable
