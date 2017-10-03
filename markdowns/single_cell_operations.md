@@ -51,7 +51,14 @@ At this point we know all the necessary conversions from bit position to (x,y) c
 
 #### Getting cell value
 
-Now that we know how are defined position and cells, we want to get the value at a position (x,y).
+Now that we know how are defined position and cells, we want to get the value at a position (x,y). 
+
+We will make it in two steps:
+1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+2. Make a **bitwise-AND** between the cell and the board
+
+If the resulting bitboard is **equal to 0**, the **value at bitpos is 0**
+Otherwise, if it is **equal to 1**, the **value at bitpos is 1**
 
 ```math
 bitboard = bitboard \wedge (1 \ll bitpos)
