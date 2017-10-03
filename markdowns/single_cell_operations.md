@@ -36,6 +36,7 @@ bitPosition = y * WIDTH + x
   x  & = & bitPosition & \mod & WIDTH \\
   y  & = & bitPosition & \div & WIDTH
 \end{array}
+\right .
 ```
 
 Now that we know how are defined position and cells, we want to get the value at a position.
