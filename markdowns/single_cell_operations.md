@@ -114,26 +114,13 @@ bool getCell(Bitboard position, int x, int y) {
     return position & (1 << y*3+x);
 }
 
-Bitboard setCell(Bitboard position, int x, int y) {
-    return position | (1 << (y*3+x));
-}
-
-Bitboard clearCell(Bitboard position, int x, int y) {
-    return position &= ~(1 << (y*3+x));
-}
-
 int main() {
     State state;
     state.board = 27;
     
-    Utils::displayPretty(state.board);
     printf("value at (x=0,y=1): %d\n", getCell(state.board,0,1));
-    
-    state.board = clearCell(state.board,0,1);
-    printf("value after clear at (x=1,y=1): %d\n", getCell(state.board,0,1));
-    
-    state.board = setCell(state.board,0,1);
-    printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
+    printf("value at (x=1,y=1): %d\n", getCell(state.board,1,1));
+    printf("value at (x=2,y=2): %d\n", getCell(state.board,2,2));
 }
 ```
 
@@ -172,5 +159,97 @@ We can write it up:
 ```C++
 Bitboard clearCell(Bitboard bitboard, int x, int y) {
     return bitboard & ~(1 << (y * 3 + x));
+}
+```
+
+#### Let's test
+
+```C++ runnable
+#include <cstdio>
+#include <cstdint>
+
+typedef uint64_t Bitboard;
+
+typedef struct StateSt {
+  // autofold {
+    int player;
+    Bitboard board; // all tiles: (0 for empty, 1 for existing tile)
+    Bitboard position; // current player tiles: (0 for empty, 1 for existing tile)
+    StateSt() : player(0), board(0), position(0) {}
+  // }
+} State;
+
+namespace Utils {
+  // autofold {
+
+    void display(Bitboard position) {
+        int i,j;
+        Bitboard currPosition = position;
+
+        printf("Bitboard display:\n\n");
+        for(i=0; i < 3; i++) {
+            for ( j = 0; j < 3; j++) {
+                printf((currPosition & 0x01) ? "1" : "0");
+                currPosition >>= 1;
+            }
+        }
+        printf("\n\n");
+    }
+
+    void displayPretty(Bitboard position) {
+        char symb;
+        int i,j;
+        Bitboard currPosition = position;
+
+        printf("Bitboard pretty display:\n\n");
+        printf("   |");
+        for (j = 0; j < 3; j++)
+            printf(" %d |", j);
+        printf("\n");
+        for (j=0; j<4; j++)
+            printf("----");
+        printf("\n");
+        for(i=0; i < 3; i++) {
+            printf(" %d |", i);
+            for ( j = 0; j < 3; j++) {
+                printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
+                currPosition >>= 1;
+            }
+            printf("\n");
+            for (j=0; j<4; j++)
+                printf("----");
+            printf("\n");
+        }
+        printf("\n");
+
+  }
+
+// }
+}
+
+bool getCell(Bitboard position, int x, int y) {
+    return position & (1 << y*3+x);
+}
+
+Bitboard setCell(Bitboard position, int x, int y) {
+    return position | (1 << (y*3+x));
+}
+
+Bitboard clearCell(Bitboard position, int x, int y) {
+    return position &= ~(1 << (y*3+x));
+}
+
+int main() {
+    State state;
+    state.board = 27;
+    
+    Utils::displayPretty(state.board);
+    printf("value at (x=0,y=1): %d\n", getCell(state.board,0,1));
+    
+    state.board = clearCell(state.board,0,1);
+    printf("value after clear at (x=1,y=1): %d\n", getCell(state.board,0,1));
+    
+    state.board = setCell(state.board,0,1);
+    printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
 }
 ```
