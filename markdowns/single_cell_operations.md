@@ -24,9 +24,13 @@ Now we simply want to transform (x,y) to bit position and vice-versa.
 
 #### Cartesian coordinates to bit position
 
+The formula is quite simple and is highly used when working with 1D vector instead of 2D arrays.
+
 ```math
 bitpos = y * W + x
 ```
+
+Alternatively, we can deduce the cartesian coordinates from the bit position
 
 #### Bit position to cartesian coordinates
 
@@ -43,6 +47,14 @@ Now that we know how are defined position and cells, we want to get the value at
 
 ```math
 bitboard = bitboard \wedge (1 \ll bitpos)
+```
+
+The resulting function should look as following:
+
+```C++
+bool getCell(Bitboard position, int x, int y) {
+    return position & (1 << y*3+x);
+}
 ```
 
 #### Let's test
