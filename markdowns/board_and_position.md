@@ -45,11 +45,43 @@ We're not going to study this case. However, you should know that bitboards can 
 
 ## Layers
 
-Layers consist in a list of unsigned 64bits integers. For example, if you need to represent a [Draughts](https://en.wikipedia.org/wiki/Draughts) board which is `N = 10x10 = 100 cells`, you will need two integers (128 bits).
+Layers consist in a **list of unsigned 64bits integers**. For example, if you need to represent a [Draughts](https://en.wikipedia.org/wiki/Draughts) board which is `N = 10x10 = 100 cells`, you will need two integers (128 bits).
 
 ```math
 nbLayers = \left \lceil{\frac{N}{64}}\right \rceil
 ```
+
+The simplest way to deal with layers is to change the Bitboard type from:
+```C++
+typedef Bitboard uint64_t;
+```
+To the more convenient:
+```C++
+typedef struct BitboardSt {
+    nbLayers = ceil(N/64);
+    uint64_t layers[nbLayers];
+    
+    BitboardSt() {
+        for (int i=0; i<nbLayers; i++)
+            layers[i] = 0;
+    }
+} Bitboard;
+```
+
+That allows us to rewrite every useful binary operations, for example:
+
+```C++
+// shift left
+std::string Bitboard::operator<< ( std::string text, std::size_t n ){}
+
+// shift right
+std::string Bitboard::operator<< ( std::string text, std::size_t n ){}
+
+// bitwise and
+int Bitboard::operator &(const Bitboard &other)
+```
+
+Then we can adapt all the methods and formulas we will see in the case of N > 64.
 
 # Displaying board and position
 
