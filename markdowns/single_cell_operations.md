@@ -51,7 +51,7 @@ bitboard = bitboard \wedge (1 \ll bitpos)
 
 We want to **add** an element at (x,y) coordinates.
 
-In other words: we want to set the bit n° bitpos **at 1**. The formula is:
+In other words: we want to set the **bit n° _bitpos_ at 1**. The formula is:
 
 ```math
 bitboard = bitboard \vee (1 \ll bitpos))
@@ -69,7 +69,7 @@ Bitboard setCell(Bitboard bitboard, int x, int y) {
 
 We want to **remove** an element at (x,y) coordinates.
 
-In other words: we want to set the bit n° bitpos **at 0**. The formula is:
+In other words: we want to set the **bit n° _bitpos_ at 0**. The formula is:
 
 ```math
 bitboard = bitboard \wedge \mathord{\sim}(1 \ll bitpos)
