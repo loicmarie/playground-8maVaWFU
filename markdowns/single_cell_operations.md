@@ -22,17 +22,18 @@ In fact a bitboard representing a cell is a sequence with only **1 bit at 1** an
 
 Now we simply want to transform (x,y) to bit position and vice-versa.
 
-#### Cartesian coordinates to bit position
+#### Cartesian coordinates and bit position
 
 The formula is quite simple and is highly used when working with 1D vector instead of 2D arrays.
 
 ```math
-bitpos = y * W + x
+\begin{equation}
+  \tag{Cartesian to bit position}
+  bitpos = y * W + x
+\end{equation}
 ```
 
-Alternatively, we can deduce the cartesian coordinates from the bit position
-
-#### Bit position to cartesian coordinates
+Alternatively, we can deduce the cartesian coordinates from the bit position. The following formula is the direct inverse of the above:
 
 ```math
 \left \{
@@ -42,6 +43,10 @@ Alternatively, we can deduce the cartesian coordinates from the bit position
 \end{array}
 \right .
 ```
+
+At this point we know all the necessary conversions from bit position to (x,y) coordinates. We can now begin to write our engine methods.
+
+#### Getting cell value
 
 Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
