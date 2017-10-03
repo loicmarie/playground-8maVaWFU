@@ -22,13 +22,13 @@ In fact a bitboard representing a cell is a sequence with only **1 bit at 1** an
 
 Now we simply want to transform (x,y) to bit position and vice-versa.
 
-## Cartesian coordinates to bit position
+#### Cartesian coordinates to bit position
 
 ```math
 bitpos = y * W + x
 ```
 
-## Bit position to cartesian coordinates
+#### Bit position to cartesian coordinates
 
 ```math
 \left \{
@@ -45,45 +45,7 @@ Now that we know how are defined position and cells, we want to get the value at
 bitboard = bitboard \wedge (1 \ll bitpos)
 ```
 
-# Setting a cell
-
-## Activating a bit
-
-We want to **add** an element at (x,y) coordinates.
-
-In other words: we want to set the **bit n° _bitpos_ at 1**. The formula is:
-
-```math
-bitboard = bitboard \vee (1 \ll bitpos)
-```
-
-We can write it up:
-
-```C++
-Bitboard setCell(Bitboard bitboard, int x, int y) {
-    return bitboard | (1 << (y * 3 + x));
-}
-```
-
-## Clearing a bit
-
-We want to **remove** an element at (x,y) coordinates.
-
-In other words: we want to set the **bit n° _bitpos_ at 0**. The formula is:
-
-```math
-bitboard = bitboard \wedge \mathord{\sim}(1 \ll bitpos)
-```
-
-We can write it up:
-
-```C++
-Bitboard clearCell(Bitboard bitboard, int x, int y) {
-    return bitboard & ~(1 << (y * 3 + x));
-}
-```
-
-# Test
+# Let's test
 
 ```C++ runnable
 #include <cstdio>
@@ -163,11 +125,52 @@ Bitboard clearCell(Bitboard position, int x, int y) {
 int main() {
     State state;
     state.board = 27;
+    
     Utils::displayPretty(state.board);
-    printf("%d\n", getCell(state.board,2,1));
-    state.board = setCell(state.board,2,1);
-    state.board = clearCell(state.board,1,0);
-    Utils::displayPretty(state.board);
-    printf("%d", getCell(state.board,2,1));
+    printf("value at (x=0,y=1): %d\n", getCell(state.board,0,1));
+    
+    state.board = clearCell(state.board,0,1);
+    printf("value after clear at (x=1,y=1): %d\n", getCell(state.board,0,1));
+    
+    state.board = setCell(state.board,0,1);
+    printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
+}
+```
+
+# Setting a cell
+
+## Activating a bit
+
+We want to **add** an element at (x,y) coordinates.
+
+In other words: we want to set the **bit n° _bitpos_ at 1**. The formula is:
+
+```math
+bitboard = bitboard \vee (1 \ll bitpos)
+```
+
+We can write it up:
+
+```C++
+Bitboard setCell(Bitboard bitboard, int x, int y) {
+    return bitboard | (1 << (y * 3 + x));
+}
+```
+
+## Clearing a bit
+
+We want to **remove** an element at (x,y) coordinates.
+
+In other words: we want to set the **bit n° _bitpos_ at 0**. The formula is:
+
+```math
+bitboard = bitboard \wedge \mathord{\sim}(1 \ll bitpos)
+```
+
+We can write it up:
+
+```C++
+Bitboard clearCell(Bitboard bitboard, int x, int y) {
+    return bitboard & ~(1 << (y * 3 + x));
 }
 ```
