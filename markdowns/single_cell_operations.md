@@ -49,6 +49,10 @@ bitboard \wedge (1 \ll y * WIDTH + x)
 
 ## Activating a bit
 
+We want to **add** an element at (x,y) coordinates.
+
+In other words: we want to set the bit n° (y*WIDTH+x) **at 1**. The formula is:
+
 ```math
 bitboard = bitboard \vee (1 \ll (y * WIDTH + x))
 ```
@@ -62,6 +66,10 @@ Bitboard setCell(Bitboard bitboard, int x, int y) {
 ```
 
 ## Clearing a bit
+
+We want to **remove** an element at (x,y) coordinates.
+
+In other words: we want to set the bit n° (y*WIDTH+x) **at 0**. The formula is:
 
 ```math
 bitboard = bitboard \wedge ~(1 \ll (y * WIDTH + x))
