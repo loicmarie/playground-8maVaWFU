@@ -45,7 +45,7 @@ Now that we know how are defined position and cells, we want to get the value at
 bitboard = bitboard \wedge (1 \ll bitpos)
 ```
 
-# Let's test
+#### Let's test
 
 ```C++ runnable
 #include <cstdio>
