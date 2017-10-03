@@ -31,6 +31,7 @@ bitPosition = y * WIDTH + x
 ## Bit position to cartesian coordinates
 
 ```math
+\left \{
 \begin{array}{r c l}
   x  & = & bitPosition & \mod & WIDTH \\
   y  & = & bitPosition & \div & WIDTH
