@@ -36,12 +36,15 @@ The formula is quite simple and is highly used when working with 1D vector inste
 Alternatively, we can deduce the cartesian coordinates from the bit position. The following formula is the direct inverse of the above:
 
 ```math
-\left \{
-\begin{array}{l l l}
-  x  & = & bitpos & \mod & W \\
-  y  & = & bitpos & \div & W
-\end{array}
-\right .
+\begin{equation}
+  \tag{Bit position to cartesian}
+    \left \{
+    \begin{array}{l l l}
+      x  & = & bitpos & \mod & W \\
+      y  & = & bitpos & \div & W
+    \end{array}
+    \right .
+\end{equation}
 ```
 
 At this point we know all the necessary conversions from bit position to (x,y) coordinates. We can now begin to write our engine methods.
