@@ -31,10 +31,10 @@ bitPosition = y * WIDTH + x
 ## Bit position to cartesian coordinates
 
 ```math
-\begin{System}
-    x = bitPosition \mod WIDTH \\
-    y = bitPosition \div WIDTH
-\end{System}
+\begin{array}{r c l}
+  x  & = & bitPosition \mod WIDTH \\
+  y  & = & bitPosition \div WIDTH
+\end{array}
 ```
 
 Now that we know how are defined position and cells, we want to get the value at a position.
