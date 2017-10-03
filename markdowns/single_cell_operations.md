@@ -25,7 +25,7 @@ Now we simply want to transform (x,y) to bit position and vice-versa.
 ## Cartesian coordinates to bit position
 
 ```math
-bitpos = y * WIDTH + x
+bitpos = y * W + x
 ```
 
 ## Bit position to cartesian coordinates
@@ -33,8 +33,8 @@ bitpos = y * WIDTH + x
 ```math
 \left \{
 \begin{array}{r c l}
-  x  & = & bitpos & \mod & WIDTH \\
-  y  & = & bitpos & \div & WIDTH
+  x  & = & bitpos & \mod & W \\
+  y  & = & bitpos & \div & W
 \end{array}
 \right .
 ```
