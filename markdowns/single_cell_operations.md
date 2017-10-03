@@ -25,7 +25,7 @@ Now we simply want to transform (x,y) to bit position and vice-versa.
 ## Cartesian coordinates to bit position
 
 ```math
-bitPosition = y * WIDTH + x
+bitpos = y * WIDTH + x
 ```
 
 ## Bit position to cartesian coordinates
@@ -33,8 +33,8 @@ bitPosition = y * WIDTH + x
 ```math
 \left \{
 \begin{array}{r c l}
-  x  & = & bitPosition & \mod & WIDTH \\
-  y  & = & bitPosition & \div & WIDTH
+  x  & = & bitpos & \mod & WIDTH \\
+  y  & = & bitpos & \div & WIDTH
 \end{array}
 \right .
 ```
@@ -42,7 +42,7 @@ bitPosition = y * WIDTH + x
 Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
 ```math
-bitboard \wedge (1 \ll y * WIDTH + x)
+bitboard \wedge (1 \ll bitpos)
 ```
 
 # Setting a cell
@@ -51,10 +51,10 @@ bitboard \wedge (1 \ll y * WIDTH + x)
 
 We want to **add** an element at (x,y) coordinates.
 
-In other words: we want to set the bit n° (y*WIDTH+x) **at 1**. The formula is:
+In other words: we want to set the bit n° bitpos **at 1**. The formula is:
 
 ```math
-bitboard = bitboard \vee (1 \ll (y * WIDTH + x))
+bitboard = bitboard \vee (1 \ll bitpos))
 ```
 
 We can write it up:
@@ -69,10 +69,10 @@ Bitboard setCell(Bitboard bitboard, int x, int y) {
 
 We want to **remove** an element at (x,y) coordinates.
 
-In other words: we want to set the bit n° (y*WIDTH+x) **at 0**. The formula is:
+In other words: we want to set the bit n° bitpos **at 0**. The formula is:
 
 ```math
-bitboard = bitboard \wedge ~(1 \ll (y * WIDTH + x))
+bitboard = bitboard \wedge ~(1 \ll bitpos)
 ```
 
 We can write it up:
