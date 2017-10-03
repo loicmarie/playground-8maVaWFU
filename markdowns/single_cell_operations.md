@@ -18,7 +18,22 @@ In fact a bitboard representing a cell is a sequence with only **1 bit at 1** an
 
 ![Cell](img/cell.png)
 
-# Getting a cell
+# Accessing a cell
+
+Now we simply want to transform (x,y) to bit position and vice-versa.
+
+## Cartesian coordinates to bit position
+
+```math
+bitPosition = y * WIDTH + x
+```
+
+## Bit position to cartesian coordinates
+
+```math
+x = bitPosition \mod WIDTH
+y = bitPosition \div WIDTH
+```
 
 Now that we know how are defined position and cells, we want to get the value at a position, and we want to get it with (x,y) cartesian coordinates.
 
