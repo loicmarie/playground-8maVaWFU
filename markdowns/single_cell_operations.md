@@ -54,7 +54,7 @@ We want to **add** an element at (x,y) coordinates.
 In other words: we want to set the **bit n° _bitpos_ at 1**. The formula is:
 
 ```math
-bitboard = bitboard \vee (1 \ll bitpos))
+bitboard = bitboard \vee (1 \ll bitpos)
 ```
 
 We can write it up:
