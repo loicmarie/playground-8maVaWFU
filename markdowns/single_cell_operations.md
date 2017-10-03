@@ -31,14 +31,15 @@ bitPosition = y * WIDTH + x
 ## Bit position to cartesian coordinates
 
 ```math
-x = bitPosition \mod WIDTH \\
+x = bitPosition \mod WIDTH
+
 y = bitPosition \div WIDTH
 ```
 
 Now that we know how are defined position and cells, we want to get the value at a position.
 
 ```math
-bitValue = 
+bitValue = bitboard & (1 << y * WIDTH + x)
 ```
 
 ```C++ runnable
@@ -104,9 +105,26 @@ namespace Utils {
 // }
 }
 
+bool getCell(Bitboard position, int x, int y) {
+    return position & (1 << y*3+x);
+}
+
+Bitboard setCell(Bitboard position, int x, int y) {
+    return position | (1 << (y*3+x));
+}
+
+Bitboard clearCell(Bitboard position, int x, int y) {
+    return position &= ~(1 << (y*3+x));
+}
+
 int main() {
     State state;
     state.board = 27;
     Utils::displayPretty(state.board);
+    printf("%d\n", getCell(state.board,2,1));
+    state.board = setCell(state.board,2,1);
+    state.board = clearCell(state.board,1,0);
+    Utils::displayPretty(state.board);
+    printf("%d", getCell(state.board,2,1));
 }
 ```
