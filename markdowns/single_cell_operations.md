@@ -32,7 +32,7 @@ bitpos = y * W + x
 
 ```math
 \left \{
-\begin{array}{r c l}
+\begin{array}{l l l}
   x  & = & bitpos & \mod & W \\
   y  & = & bitpos & \div & W
 \end{array}
@@ -42,7 +42,7 @@ bitpos = y * W + x
 Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
 ```math
-bitboard \wedge (1 \ll bitpos)
+bitboard \wedge= (1 \ll bitpos)
 ```
 
 # Setting a cell
