@@ -158,9 +158,11 @@ int main() {
 
 ## Activating a bit
 
-We want to **add** an element at (x,y) coordinates.
+We want to **add** an element at (x,y) coordinates. In other words: we want to set the **bit n° _bitpos_ at 1**. 
 
-In other words: we want to set the **bit n° _bitpos_ at 1**. The formula is:
+We will make it in two steps:
+1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+2. Make a **bitwise-OR** between the cell and the board
 
 ```math
 bitboard = bitboard \vee (1 \ll bitpos)
@@ -176,9 +178,11 @@ Bitboard setCell(Bitboard bitboard, int x, int y) {
 
 ## Clearing a bit
 
-We want to **remove** an element at (x,y) coordinates.
+We want to **remove** an element at (x,y) coordinates. In other words: we want to set the **bit n° _bitpos_ at 0**.
 
-In other words: we want to set the **bit n° _bitpos_ at 0**. The formula is:
+We will make it in two steps:
+1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+2. Make a **bitwise-AND** between the **bitwise-complement** of cell and the board
 
 ```math
 bitboard = bitboard \wedge \mathord{\sim}(1 \ll bitpos)
