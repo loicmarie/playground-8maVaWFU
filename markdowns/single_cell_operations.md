@@ -24,24 +24,24 @@ Now we simply want to transform (x,y) to bit position and vice-versa.
 
 #### Cartesian coordinates to bit position
 
-    The formula is quite simple and is highly used when working with 1D vector instead of 2D arrays.
-    
-    ```math
-    bitpos = y * W + x
-    ```
-    
-    Alternatively, we can deduce the cartesian coordinates from the bit position
+The formula is quite simple and is highly used when working with 1D vector instead of 2D arrays.
+
+```math
+bitpos = y * W + x
+```
+
+Alternatively, we can deduce the cartesian coordinates from the bit position
 
 #### Bit position to cartesian coordinates
 
-    ```math
-    \left \{
-    \begin{array}{l l l}
-      x  & = & bitpos & \mod & W \\
-      y  & = & bitpos & \div & W
-    \end{array}
-    \right .
-    ```
+```math
+\left \{
+\begin{array}{l l l}
+  x  & = & bitpos & \mod & W \\
+  y  & = & bitpos & \div & W
+\end{array}
+\right .
+```
 
 Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
