@@ -8,12 +8,12 @@ plan:
     statement: markdowns/tictactoe_example.md
 - title: II. Single cell operations
   plan:
-  - title: II.1 Board and position
-    statement: markdowns/board_and_position.md
-  - title: II.2 Absolute position
-    statement: markdowns/absolute_position.md
-  - title: II.3 Relative position
-    statement: markdowns/relative_position.md
+  - title: II.1 Board
+    statement: markdowns/board.md
+  - title: II.2 Position
+    statement: markdowns/position.md
+  - title: II.3 Single cell operations
+    statement: markdowns/single_cell_operations.md
 - title: III. Multi cells operations
   plan:
     - title: III.1 Filter and iterator
