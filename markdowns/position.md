@@ -9,6 +9,8 @@ We have just seen that a cell can be defined by the **position of the bit** on t
 
 We have already talked about it in the previous chapter, so we will just show how can we make conversion from (x,y) to bit position and vice versa.
 
+![Cartesian coordinates](img/coords_cartesian.png)
+
 ## Bit position conversion
 
 The formula is quite simple and is highly used when working with 1D vector instead of 2D arrays.
@@ -38,7 +40,7 @@ At this point we know all the necessary conversions from bit position to (x,y) c
 
 # One-hot vector
 
-We call a "**one-hot vector**" a group of bits with a single high (1) bit and all the others low (0). 
+We call a "**one-hot vector**" a group of bits with a single high (1) bit and all the others low (0).
 
 This type of vector is often used to represent a **single state** in state-machines.
 
