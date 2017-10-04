@@ -1,4 +1,4 @@
-# Basic operations
+# Basic operation
 
 We will see:
 1. [Board representation](markdowns/board.md), the correlation between a 2D board and a 64bits integer
@@ -10,4 +10,4 @@ We will see:
 | operator | math | C++ | explanation | example |
 |----------|------|-------------|---------|
 | AND      | $`\wedge`$ | `&&` | - |
-| OR | $`\vee`$ | `||` | - |
+| OR      | $`\vee`$ | `||` | - |
