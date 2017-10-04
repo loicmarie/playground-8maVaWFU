@@ -294,7 +294,7 @@ int main() {
 
 # Relative position
 
-```
+```math
 
   noWe         nort         noEa
           +7    +8    +9
