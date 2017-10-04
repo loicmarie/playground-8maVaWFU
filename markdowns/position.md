@@ -51,3 +51,29 @@ Alternatively, we can deduce the cartesian coordinates from the bit position. Th
 ```
 
 At this point we know all the necessary conversions from bit position to (x,y) coordinates. We can now begin to write our engine methods.
+
+# Swap specific case: one-hot vector
+
+In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
+
+Considering the above example, you get the same result with: `hero.position >>= 1`.
+
+```C++
+void moveHeroLeft(Hero * hero) {
+    hero.position >>= 1;
+}
+```
+
+How does it works with other relative position ? A picture speaks a thousand words:
+
+![Compass](img/compass.png)
+
+In the above illustration, the **minus** sign `-` is a **right shift** and the **plus** sign `+` is a **left shift**.
+
+So how should we make our hero move up ? Here it is:
+
+```C++
+void moveHeroUp(Hero * hero) {
+    hero.position >>= WIDTH;
+}
+```
