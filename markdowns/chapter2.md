@@ -10,4 +10,4 @@ We will see:
 | operator | math | C++ | explanation | example |
 |----------|------|-------------|---------|
 | AND      |  | `&&` | - |
-| OR      | | `||` | - |
+| OR      | $`\vee`$ | `||` | - |
