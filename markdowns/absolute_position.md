@@ -125,11 +125,9 @@ Bitboard clearCell(Bitboard bitboard, int x, int y) {
 ```
 
 
-# Moving value
+# Switching value
 
-We want to move an element from (x1,y1) to (x2,y2) coordinates. In other words: we want to set the bit n° bitpos1 at 0 and set the bit n° bitpos2 at 1.
-
-We can easily do this with by using our functions "set" and "clear" on the two cells.
+We want to **switch** the value at (x,y) coordinates. In other words: **if the bit is 1, we want it to 0. Otherwise, we want it to 1**.
 
 ```math
 bitboard = bitboard \vee (1 \ll bitpos1) \wedge \mathord{\sim}(1 \ll bitpos2)
@@ -138,8 +136,20 @@ bitboard = bitboard \vee (1 \ll bitpos1) \wedge \mathord{\sim}(1 \ll bitpos2)
 We can write it up:
 
 ```C++
-Bitboard clearCell(Bitboard bitboard, int x, int y) {
-    return bitboard & ~(1 << (y * 3 + x));
+Bitboard switchCell(Bitboard bitboard, int x, int y) {
+    return bitboard ^ (1 << (y * 3 + x));
+}
+```
+
+# Swapping values
+
+We want to **swap** values between (x1,y1) and (x2,y2) coordinates. In other words: we want to **exchange the value of bit n° bitpos1 with the value of bit n° bitpos2**.
+
+We can easily do this with by using our function "switch". It gives:
+
+```C++
+Bitboard swapCells(Bitboard position, int x1, int y1, int x2, int y2) {
+    return position ^ (1 << (y2 * 3 + x2)) ^ (1 << (y1 * 3 + x1));
 }
 ```
 
@@ -218,8 +228,12 @@ Bitboard clearCell(Bitboard position, int x, int y) {
     return position & ~(1 << (y*3+x));
 }
 
+Bitboard switchCell(Bitboard position, int x, int y) {
+    return position ^ (1 << y * 3 + x);
+}
+
 Bitboard swapCells(Bitboard position, int x1, int y1, int x2, int y2) {
-    return position | (1 << (y2*3+x2)) & ~(1 << (y1*3+x1));
+    return position ^ (1 << (y2 * 3 + x2)) ^ (1 << (y1 * 3 + x1));
 }
 
 int main() {
@@ -227,13 +241,29 @@ int main() {
     state.board = 27;
 
     Utils::displayPretty(state.board);
-    printf("value at (x=0,y=1): %d\n", getCell(state.board,0,1));
+    printf("value at (x=0,y=0): %d\n", getCell(state.board,0,0));
+    printf("value at (x=1,y=0): %d\n", getCell(state.board,1,0));
+    printf("value at (x=2,y=0): %d\n\n", getCell(state.board,2,0));
 
-    state.board = clearCell(state.board,0,1);
-    printf("value after clear at (x=1,y=1): %d\n", getCell(state.board,0,1));
+    state.board = clearCell(state.board,0,0);
 
-    state.board = setCell(state.board,0,1);
-    printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
+    printf("clean at (x=0,y=0): %d\n\n", getCell(state.board,0,0));
+    Utils::displayPretty(state.board);
+
+    state.board = activateCell(state.board,2,0);
+
+    printf("activate at (x=2,y=0). New value: %d\n\n", getCell(state.board,2,0));
+    Utils::displayPretty(state.board);
+    
+    state.board = switchCell(state.board,1,1);
+
+    printf("switch at (x=1,y=1). New value: %d\n\n", getCell(state.board,1,1));
+    Utils::displayPretty(state.board);
+
+    state.board = swapCells(state.board,0,0,2,0);
+
+    printf("swap between (x=0,y=0) and (x=2,y=0)\n\n");
+    Utils::displayPretty(state.board);
 }
 ```
 
