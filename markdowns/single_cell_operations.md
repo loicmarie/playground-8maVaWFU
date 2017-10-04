@@ -18,7 +18,7 @@ In fact a bitboard representing a cell is a sequence with only **1 bit at 1** an
 
 ![Cell](img/cell.png)
 
-# Accessing a cell
+# Getting cell value
 
 Now we simply want to transform (x,y) to bit position and vice-versa.
 
@@ -49,7 +49,7 @@ Alternatively, we can deduce the cartesian coordinates from the bit position. Th
 
 At this point we know all the necessary conversions from bit position to (x,y) coordinates. We can now begin to write our engine methods.
 
-#### Getting cell value
+#### Get value
 
 Now that we know how are defined position and cells, we want to get the value at a position (x,y). 
 
@@ -155,7 +155,7 @@ int main() {
 }
 ```
 
-# Setting a cell
+# Setting cell value
 
 ## Activating a bit
 
@@ -291,3 +291,25 @@ int main() {
     printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
 }
 ```
+
+# Moving cell value
+
+## Shifting a bit
+
+We want to **move** an element from (x1,y1) to (x2,y2) coordinates. In other words: we want to set the **bit n° _bitpos1_ at 0** and set the **bit n° _bitpos2_ at 1**.
+
+We could eventually use the "set" function on the two cells, but we have a mean to get the same result with a more bit-friendly operation that uses the **SHIFT operator** $`<<`$ or $`>>`$.
+
+```math
+bitboard = bitboard \vee (1 \ll bitpos)
+```
+
+We can write it up:
+
+```C++
+Bitboard setCell(Bitboard bitboard, int x, int y) {
+    return bitboard | (1 << (y * 3 + x));
+}
+```
+
+## Clearing a bit
