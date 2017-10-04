@@ -4,12 +4,12 @@ In the previous chapter, **we used a 3x3 board** according to the Tic-Tac-Toe ru
 
 Be `N = HEIGHT * WIDTH` the number of cells of the board. Considering the integers we use have **exactly 64 bits**, we can ask ourselves:
 
-* How should we handle board with **N < 64** ?
-* How should we handle board with **N > 64** ?
+* How should we [handle board with **N < 64**](#n-inf-64) ?
+* How should we [handle board with **N > 64**](#n-sup-64) ?
 
-Before answering this question, we should see **how bits are numeroted in 2D space**.
+Once we have seen **how bits are numeroted in 2D space**, I will give you two methods in order to [display the bitboards](#diplay-bitboard).
 
-# Bits position in 2D space with N <= 64
+# <a name="n-inf-64"></a> Bits position in 2D space with N <= 64
 
 In this tutorial, we use the **Big Endian notation**. All the formulas you will read later will entirely depends on this frame of reference.
 
@@ -39,7 +39,7 @@ Using cartesian coordinates (x,y), we can observe that:
 As shown in the above image, in the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
 
 
-# Bits position with N > 64 (optional)
+# <a name="n-sup-64"></a> Bits position with N > 64 (optional)
 
 We're not going to study this case. However, you should know that bitboards can potentially **represent every 2D boards** regardless of the board size, using a method called **layers**.
 
@@ -83,7 +83,7 @@ int Bitboard::operator &(const Bitboard &other)
 
 Then we can adapt all the methods and formulas we will see in the case of N > 64.
 
-# Displaying board and position
+# <a name="display-bitboard"></a> Displaying board and position
 
 In the following sections, we will keep our **Tic-Tac-Toe** example. We will also need to display Bitboards if we want to well understand the different operations. Two type of displays will be useful:
 * a simple display, that shows the **binary sequence**
@@ -164,6 +164,12 @@ int main() {
     Utils::display(state.board);
 }
 ```
+
+# What has been done so far ?
+
+1. We have seen how to deal with **bit numerotation in standard bitboards** (N <= 64).
+2. We will not study this case, but we have seen a method to **handle N > 64 cases**.
+3. You have now two C++ methods that allows to **display and debug bitboards** that you will use in the following sections.
 
 Now we have all the required knowledges and tools to bitboards manipulation.
 
