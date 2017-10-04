@@ -1,24 +1,15 @@
-# Position
+# Handling coordinates
 
+We have just seen that a cell can be defined by the **position of the bit** on the bitboard. In fact, by using bitboards you will need to deal with three different coordinates:
+* **Bit position**
+* **Cartesian coordinates** (x,y)
+* **One-hot vector***
 
+# Cartesian coordinates (x,y)
 
-**Reminder**: in this tutorial (which uses C++), the `Bitboard` type has been defined as an unsigned 64bits integer (corresponding to the `uint64_t` type)
+We have already talked about it in the previous chapter, so we will just show how can we make conversion from (x,y) to bit position and vice versa.
 
-# <a name="cells-and-absolute"></a>  Cells and absolute positioning
-
-We have said that a position is of type `Bitboard`. So how is defined a cell ?
-
-Response is... a Bitboard ! Yes, that's pretty confusing.
-
-> _I don't get the difference ?_
-
-In fact a bitboard representing a cell is a sequence with only **1 bit at 1** and **the other at 0**. This type of binary vector is often used in different computing domains and is called "**one-hot encoding**".
-
-![Cell](img/cell.png)
-
-Now we simply want to transform (x,y) to bit position and vice-versa.
-
-#### Cartesian coordinates and bit position
+## Bit position conversion
 
 The formula is quite simple and is highly used when working with 1D vector instead of 2D arrays.
 
@@ -44,6 +35,18 @@ Alternatively, we can deduce the cartesian coordinates from the bit position. Th
 ```
 
 At this point we know all the necessary conversions from bit position to (x,y) coordinates. We can now begin to write our engine methods.
+
+# One-hot vector
+
+We call a "**one-hot vector**" a group of bits with a single high (1) bit and all the others low (0). 
+
+![Cell](img/cell.png)
+
+This type of vector is often used to represent a single state in state-machines.
+
+> _Then it's not like a bitboard ?_
+
+Yes, but with an additional constraint: only one bit is high (1). It will be pretty confusing up to the end of the tutorial, so be very careful when you handle **position (bitboard)** and **cells (one-hot vector)**.
 
 # Swap specific case: one-hot vector
 
