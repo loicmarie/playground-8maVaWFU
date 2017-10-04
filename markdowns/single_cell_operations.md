@@ -185,6 +185,7 @@ We want to **remove** an element at (x,y) coordinates. In other words: we want t
 We will make it in two steps:
 1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
 2. Make a **bitwise-AND** between the **bitwise-NOT** of cell and the board
+<br/>
 
 
 ```math
