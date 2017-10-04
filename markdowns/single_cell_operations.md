@@ -164,7 +164,7 @@ We want to **add** an element at (x,y) coordinates. In other words: we want to s
 We will make it in two steps:
 1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
 2. Make a **bitwise-OR** between the cell and the board
-
+<br/>
 
 ```math
 bitboard = bitboard \vee (1 \ll bitpos)
