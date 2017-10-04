@@ -44,6 +44,8 @@ This type of vector is often used to represent a **single state** in state-machi
 
 > _What is this good for ?_
 
+We will use the only high bit to represent the position of one thing (an entity, a cell or whatever) on the board, as always in Big Endian.
+
 This is the encoding we will choose most of the time. In combination with bitboards, it will allow us to handle complex position computation with **very fast logical and bitwise operations**.
 
 ![Cell](img/cell.png)
