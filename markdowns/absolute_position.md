@@ -1,4 +1,6 @@
-# II.1 Single cell operations
+# Absolute position
+
+Now we can find ourselves in a 2D board, we will see how to **access** and **modify** cells.
 
 These functions will be very useful. We will now see how to:
 1. get the value of a cell
