@@ -1,11 +1,11 @@
 title: Bitboards basis
 plan:
-# - title: I. Introduction to Bitboards
-#   plan:
-- title: I.1 Bitboards and simulation
-  statement: markdowns/introduction.md
-- title: 'I.2 Example: a Tic-Tac-Toe engine'
-  statement: markdowns/tictactoe_example.md
+- title: I. Introduction to Bitboards
+  plan:
+  - title: I.1 Bitboards and simulation
+    statement: markdowns/introduction.md
+  - title: 'I.2 Example: a Tic-Tac-Toe engine'
+    statement: markdowns/tictactoe_example.md
 # - title: II. Basic operations
 #   plan:
 #   - title: II. Basic operations
