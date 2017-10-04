@@ -5,7 +5,11 @@ We will see:
 2. [Coordinates definition](markdowns/coordinates.md). There is in fact several ways of defining coordinates (cartesian, bit position or bitboard).
 3. [Accessing and setting](markdowns/single_cell_operations.md) values at coordinates.
 
+All along this tutorial, we will the basis concerning the **logical** and **bitwise** common operations. If you're not comfortable with this operators, you will probably need a reminder (that is there).
+
 # Reminder: logical and bitwise operators
+
+You can find here all the logic we'll need in the next pages.
 
 ## Logical operators
 
@@ -14,3 +18,5 @@ We will see:
 ## Bitwise operators
 
 ![Bitwise operators](http://www.circuitsgallery.com/wp-content/uploads/2012/07/Bitwise-operators-in-C.png)
+
+Now, let's take a look at how is defined the board when it comes to bitboard theory.
