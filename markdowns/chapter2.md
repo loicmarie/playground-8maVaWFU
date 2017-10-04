@@ -10,12 +10,12 @@ All along this tutorial, we will the basis concerning the **logical** and **bitw
 # Reminder: logical and bitwise operators
 
 You can find here all the logic we'll need in the next pages. We will also use some math symbolic:
-* AND : \wedge
-* OR : \vee
-* NOT : \neg
-* XOR : \oplus
-* Left shift : \ll
-* Right shift : \gg
+* AND : $`\wedge`$
+* OR : $`\vee`$
+* NOT : $`\neg`$
+* XOR : $`\oplus`$
+* Left shift : $`\ll`$
+* Right shift : $`\gg`$
 
 ## Logical operators
 
