@@ -39,9 +39,11 @@ Using cartesian coordinates (x,y), we can observe that:
 As shown in the above image, in the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
 
 
-::: # <a name="n-sup-64"></a> Bits position with N > 64 (optional)
+# <a name="n-sup-64"></a> Bits position with N > 64 (optional)
 
 We're not going to study this case. However, you should know that bitboards can potentially **represent every 2D boards** regardless of the board size, using a method called **layers**.
+
+::: More about Layers
 
 ## Layers
 
