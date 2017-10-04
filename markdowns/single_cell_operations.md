@@ -51,7 +51,7 @@ At this point we know all the necessary conversions from bit position to (x,y) c
 
 #### Get value
 
-Now that we know how are defined position and cells, we want to get the value at a position (x,y). 
+Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
 We will make it in two steps:
 1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
@@ -145,11 +145,11 @@ bool getCell(Bitboard position, int x, int y) {
 int main() {
     State state;
     state.board = 27;
-    
+
     printf("value at (x=0,y=1): %d\n", getCell(state.board,0,1));
     printf("value at (x=1,y=1): %d\n", getCell(state.board,1,1));
     printf("value at (x=2,y=2): %d\n", getCell(state.board,2,2));
-    
+
     printf("\n");
     Utils::displayPretty(state.board);
 }
@@ -159,7 +159,7 @@ int main() {
 
 ## Activating a bit
 
-We want to **add** an element at (x,y) coordinates. In other words: we want to set the **bit n° _bitpos_ at 1**. 
+We want to **add** an element at (x,y) coordinates. In other words: we want to set the **bit n° _bitpos_ at 1**.
 
 We will make it in two steps:
 1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
@@ -280,13 +280,13 @@ Bitboard clearCell(Bitboard position, int x, int y) {
 int main() {
     State state;
     state.board = 27;
-    
+
     Utils::displayPretty(state.board);
     printf("value at (x=0,y=1): %d\n", getCell(state.board,0,1));
-    
+
     state.board = clearCell(state.board,0,1);
     printf("value after clear at (x=1,y=1): %d\n", getCell(state.board,0,1));
-    
+
     state.board = setCell(state.board,0,1);
     printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
 }
@@ -294,22 +294,13 @@ int main() {
 
 # Relative position
 
-```math
-
-  noWe         nort         noEa
-          +7    +8    +9
-              \  |  /
-  west    -1 <-  0 -> +1    east
-              /  |  \
-          -9    -8    -7
-  soWe         sout         soEa
-```
-
 ## Shifting a bit
 
 We want to **move** an element from (x1,y1) to (x2,y2) coordinates. In other words: we want to set the **bit n° _bitpos1_ at 0** and set the **bit n° _bitpos2_ at 1**.
 
 We could eventually use the "set" function on the two cells, but we have a mean to get the same result with a more bit-friendly operation that uses the **SHIFT operator** $`<<`$ or $`>>`$.
+
+![Compass](img/compass.png)
 
 ```math
 bitboard = bitboard \vee (1 \ll bitpos)

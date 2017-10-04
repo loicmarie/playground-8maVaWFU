@@ -15,12 +15,12 @@ In this tutorial, we use the **Big Endian notation**. All the formulas you will 
 
 ::: Reminder: Endianness
 
-**Big Endian** notation: the first bit is the biggest. 
+**Big Endian** notation: the first bit is the biggest.
 ```math
 1101_{(2)} = 1*2^3 + 1*2^2 + 0*2^1 + 1*2^0 = 13_{(10)}
 ```
 
-**Little Endian** notation: the last bit is the biggest 
+**Little Endian** notation: the last bit is the biggest
 ```math
 1101_{(2)} = 1*2^0 + 1*2^1 + 0*2^2 + 1*2^3 = 11_{(10)}
 ```
@@ -33,8 +33,8 @@ Reading the **bits from right to left** corresponds to reading the **2D cells fr
 Using cartesian coordinates (x,y), we can observe that:
 * The coordinates (0,0) corresponds to the bit n°0
 * The coordinates (1,0) corresponds to the bit n°1
-* The coordinates (1,1) corresponds to the bit n°4
 * The coordinates (2,2) corresponds to the bit n°8
+* ...
 
 As shown in the above image, in the cases where the board is `N < 64`, we can still work by simply setting the remaining **unused bits to zero**.
 
@@ -60,7 +60,7 @@ To the more convenient:
 typedef struct BitboardSt {
     nbLayers = ceil(N/64);
     uint64_t layers[nbLayers];
-    
+
     BitboardSt() {
         for (int i=0; i<nbLayers; i++)
             layers[i] = 0;
@@ -165,6 +165,6 @@ int main() {
 }
 ```
 
-Now we have all the required knowledges and tools to bitboards manipulation. 
+Now we have all the required knowledges and tools to bitboards manipulation.
 
 Let's make our first step in the next part.
