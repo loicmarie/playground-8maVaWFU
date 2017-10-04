@@ -145,6 +145,6 @@ Now that you have seen some bitboards features, let's get into theory !
 # What has been done so far
 
 1. We have learnt the Tic-Tac-Toe rules (but it's not very important...)
-2. We have listed the main manners to represent the state of a 2D board game (2D array, 1D vector, dictionary and other)
-3. We have introduced the bit array data structure
-4. We have seen how bitboards use this structure to handle state representation with bits and state manipulation with binary and logical operators
+2. We have listed the main manners to represent the **state of a 2D board game** (2D array, 1D vector, dictionary and other)
+3. We have introduced the **bit array** data structure
+4. We have seen how **bitboards** use this structure to handle state representation with bits and state manipulation with binary and logical operators
