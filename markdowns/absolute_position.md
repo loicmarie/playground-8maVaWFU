@@ -159,9 +159,19 @@ Bitboard swapCells(Bitboard position, int x1, int y1, int x2, int y2) {
 }
 ```
 
-    **Application**
-    
-    Consider
+#### Example: moving an entity
+
+You have a hero on a 2D map, and you want it to move to the left. Fortunately, you have a one-hot vector called `hero.position` that handles the hero position. 
+
+Then, you can just `hero.position = swapCells(hero.x, hero.y, hero.x-1, hero.y)` and you're done.
+
+#### Specific case: one-hot vector
+
+In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
+
+Considering the above example, you get the same result with: `hero.position >>= 1`.
+
+![Compass](img/compass.png)
 
 # Playground
 
