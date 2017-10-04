@@ -9,11 +9,20 @@ All along this tutorial, we will the basis concerning the **logical** and **bitw
 
 # Reminder: logical and bitwise operators
 
-You can find here all the logic we'll need in the next pages.
+You can find here all the logic we'll need in the next pages. We will also use some math symbolic:
+* AND : \wedge
+* OR : \vee
+* NOT : \neg
+* XOR : \oplus
+* Left shift : \ll
+* Right shift : \gg
 
 ## Logical operators
 
 ![Logical operators](http://shukaiyang.myweb.hinet.net/cpp/figures/bitwiseops.gif)
+
+The mathematical symbols we will sometimes use:
+* AND : \
 
 ## Bitwise operators
 
