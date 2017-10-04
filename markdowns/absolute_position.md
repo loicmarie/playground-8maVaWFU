@@ -171,7 +171,7 @@ void moveHeroLeft(Hero * hero) {
 }
 ```
 
-#### Specific case: one-hot vector
+#### Swap specific case: one-hot vector
 
 In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
 
