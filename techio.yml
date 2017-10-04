@@ -8,8 +8,8 @@ plan:
     statement: markdowns/tictactoe_example.md
 - title: II. Basic operations
   plan:
-  # - title: II. Basic operations
-  #   statement: markdowns/chapter2.md
+  - title: II. Basic operations
+    statement: markdowns/chapter2.md
   - title: II.1 Understanding board
     statement: markdowns/board.md
   - title: II.2 Defining positions
