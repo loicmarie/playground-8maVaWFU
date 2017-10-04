@@ -6,7 +6,7 @@ plan:
     statement: markdowns/introduction.md
   - title: 'I.2 Example: a Tic-Tac-Toe engine'
     statement: markdowns/tictactoe_example.md
-- title: II. Board operations
+- title: II. Basic operations
   plan:
   - title: II. Basic operations
     statement: markdowns/chapter2.md
