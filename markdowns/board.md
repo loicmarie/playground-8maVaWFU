@@ -4,8 +4,8 @@ In the previous chapter, **we used a 3x3 board** according to the Tic-Tac-Toe ru
 
 Be `N = HEIGHT * WIDTH` the number of cells of the board. Considering the integers we use have **exactly 64 bits**, we can ask ourselves:
 
-* How to handle board with **N < 64** ?
-* How to handle board with **N > 64** ?
+* How should we handle board with **N < 64** ?
+* How should we handle board with **N > 64** ?
 
 Before answering this question, we should see **how bits are numeroted in 2D space**.
 
