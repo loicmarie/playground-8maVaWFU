@@ -165,13 +165,37 @@ You have a hero on a 2D map, and you want it to move to the left. Fortunately, y
 
 Then, you can just `hero.position = swapCells(hero.x, hero.y, hero.x-1, hero.y)` and you're done.
 
+```C++
+void moveHeroLeft(Hero * hero) {
+    hero.position = swapCells(hero.x, hero.y, hero.x-1, hero.y);
+}
+```
+
 #### Specific case: one-hot vector
 
 In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
 
 Considering the above example, you get the same result with: `hero.position >>= 1`.
 
+```C++
+void moveHeroLeft(Hero * hero) {
+    hero.position >>= 1;
+}
+```
+
+How does it works with other relative position ? A picture speaks a thousand words:
+
 ![Compass](img/compass.png)
+
+In the above illustration, the minus sign `-` is a right shift and the plus sign `+` is a left shift.
+
+So how should we make our hero move up ? Here it is:
+
+```C++
+void moveHeroUp(Hero * hero) {
+    hero.position >>= WIDTH;
+}
+```
 
 # Playground
 
