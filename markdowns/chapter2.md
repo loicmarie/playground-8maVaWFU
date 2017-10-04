@@ -6,3 +6,6 @@ We will see:
 3. [Accessing and setting](markdowns/single_cell_operations.md) values at coordinates.
 
 # Logical and bitwise operators
+
+| operator | math | C++ | explanation | example |
+|----------|------|-------------|---------|
