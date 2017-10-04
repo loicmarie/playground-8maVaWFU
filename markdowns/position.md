@@ -1,9 +1,9 @@
 # Handling coordinates
 
 We have just seen that a cell can be defined by the **position of the bit** on the bitboard. In fact, by using bitboards you will need to deal with three different coordinates:
-* **Bit position**
-* **Cartesian coordinates** (x,y)
-* **One-hot vector***
+* **Bit position** that we talked about in the previous chapter
+* **Cartesian coordinates** (x,y), that you should all know about
+* The **one-hot vectors**, less known but no less important
 
 # Cartesian coordinates (x,y)
 
@@ -52,7 +52,7 @@ This is the encoding we will choose most of the time. In combination with bitboa
 
 Yes, but with an additional constraint: only one bit is high (1). It will be pretty confusing up to the end of the tutorial, so be very careful when you handle **position (bitboard)** and **cells (one-hot vector)**.
 
-# Swap specific case: one-hot vector
+# Updating position
 
 In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
 
