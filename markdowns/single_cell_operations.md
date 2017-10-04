@@ -184,14 +184,14 @@ We want to **remove** an element at (x,y) coordinates. In other words: we want t
 
 We will make it in two steps:
 1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
-2. Make a **bitwise-AND** between the **bitwise-complement** of cell and the board
+2. Make a **bitwise-AND** between the **bitwise-NOT** of cell and the board
 
 
 ```math
 bitboard = bitboard \wedge \mathord{\sim}(1 \ll bitpos)
 ```
 
-We can write it up:
+See the `~` thing in the formula ? This is the bitwise-NOT. We can write it up:
 
 ```C++
 Bitboard clearCell(Bitboard bitboard, int x, int y) {
@@ -273,7 +273,7 @@ Bitboard setCell(Bitboard position, int x, int y) {
 }
 
 Bitboard clearCell(Bitboard position, int x, int y) {
-    return position &= ~(1 << (y*3+x));
+    return position & ~(1 << (y*3+x));
 }
 
 int main() {
