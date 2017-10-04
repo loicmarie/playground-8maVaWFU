@@ -5,7 +5,7 @@ We will see:
 2. [Coordinates definition](markdowns/coordinates.md). There is in fact several ways of defining coordinates (cartesian, bit position or bitboard).
 3. [Accessing and setting](markdowns/single_cell_operations.md) values at coordinates.
 
-All along this tutorial, we will the basis concerning the **logical** and **bitwise** common operations. If you're not comfortable with this operators, you will probably need a reminder (that is there).
+All along this tutorial, we will the basis concerning the **logical** and **bitwise** common operations. If you're not comfortable with this operators, you will probably need a reminder (that is there). You will probably come back on it later.
 
 # Reminder: logical and bitwise operators
 
@@ -20,9 +20,6 @@ You can find here all the logic we'll need in the next pages. We will also use s
 ## Logical operators
 
 ![Logical operators](http://shukaiyang.myweb.hinet.net/cpp/figures/bitwiseops.gif)
-
-The mathematical symbols we will sometimes use:
-* AND : \
 
 ## Bitwise operators
 
