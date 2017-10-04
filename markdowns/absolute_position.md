@@ -85,7 +85,6 @@ bool getCell(Bitboard position, int x, int y) {
 #include <cstdint>
 
 typedef uint64_t Bitboard;
-
 typedef struct StateSt {
   // autofold {
     int player;
@@ -94,7 +93,6 @@ typedef struct StateSt {
     StateSt() : player(0), board(0), position(0) {}
   // }
 } State;
-
 namespace Utils {
   // autofold {
 
@@ -212,7 +210,6 @@ Bitboard clearCell(Bitboard bitboard, int x, int y) {
 #include <cstdint>
 
 typedef uint64_t Bitboard;
-
 typedef struct StateSt {
   // autofold {
     int player;
@@ -221,7 +218,6 @@ typedef struct StateSt {
     StateSt() : player(0), board(0), position(0) {}
   // }
 } State;
-
 namespace Utils {
   // autofold {
 
@@ -294,5 +290,23 @@ int main() {
 
     state.board = setCell(state.board,0,1);
     printf("value after set at (x=1,y=1): %d\n", getCell(state.board,0,1));
+}
+```
+
+# Moving value
+
+We want to move an element from (x1,y1) to (x2,y2) coordinates. In other words: we want to set the bit n° bitpos1 at 0 and set the bit n° bitpos2 at 1.
+
+We can easily do this with by using our functions "set" and "clear" on the two cells.
+
+```math
+bitboard = (bitboard \vee (1 \ll bitpos1)) \wedge \mathord{\sim}(1 \ll bitpos2)
+```
+
+We can write it up:
+
+```C++
+Bitboard clearCell(Bitboard bitboard, int x, int y) {
+    return bitboard & ~(1 << (y * 3 + x));
 }
 ```
