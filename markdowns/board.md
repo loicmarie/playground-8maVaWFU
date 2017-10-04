@@ -1,4 +1,4 @@
-# II.1 Board and position
+# Understanding board
 
 In the previous chapter, **we used a 3x3 board** according to the Tic-Tac-Toe rules.
 
