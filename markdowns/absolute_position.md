@@ -130,7 +130,7 @@ Bitboard clearCell(Bitboard bitboard, int x, int y) {
 We want to **switch** the value at (x,y) coordinates. In other words: **if the bit is 1, we want it to 0. Otherwise, we want it to 1**.
 
 ```math
-bitboard = bitboard \vee (1 \ll bitpos1) \wedge \mathord{\sim}(1 \ll bitpos2)
+bitboard = bitboard \oplus (1 \ll bitpos)
 ```
 
 We can write it up:
@@ -147,11 +147,21 @@ We want to **swap** values between (x1,y1) and (x2,y2) coordinates. In other wor
 
 We can easily do this with by using our function "switch". It gives:
 
+```math
+bitboard = bitboard \oplus (1 \ll bitpos1) \oplus (1 \ll bitpos2)
+```
+
+We can write it up:
+
 ```C++
 Bitboard swapCells(Bitboard position, int x1, int y1, int x2, int y2) {
     return position ^ (1 << (y2 * 3 + x2)) ^ (1 << (y1 * 3 + x1));
 }
 ```
+
+    **Application**
+    
+    Consider
 
 # Playground
 
