@@ -129,6 +129,11 @@ Bitboard clearCell(Bitboard bitboard, int x, int y) {
 
 We want to **switch** the value at (x,y) coordinates. In other words: **if the bit is 1, we want it to 0. Otherwise, we want it to 1**.
 
+We will make it in two steps:
+1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+2. Make a **bitwise-XOR** between the cell and the board
+<br/>
+
 ```math
 bitboard = bitboard \oplus (1 \ll bitpos)
 ```
