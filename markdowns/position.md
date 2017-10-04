@@ -40,9 +40,13 @@ At this point we know all the necessary conversions from bit position to (x,y) c
 
 We call a "**one-hot vector**" a group of bits with a single high (1) bit and all the others low (0). 
 
-![Cell](img/cell.png)
+This type of vector is often used to represent a **single state** in state-machines.
 
-This type of vector is often used to represent a single state in state-machines.
+> _What is this good for ?_
+
+This is the encoding we will choose most of the time. In combination with bitboards, it will allow us to handle complex position computation with **very fast logical and bitwise operations**.
+
+![Cell](img/cell.png)
 
 > _Then it's not like a bitboard ?_
 
