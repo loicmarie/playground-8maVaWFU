@@ -292,7 +292,18 @@ int main() {
 }
 ```
 
-# Moving cell value
+# Relative position
+
+```
+
+  noWe         nort         noEa
+          +7    +8    +9
+              \  |  /
+  west    -1 <-  0 -> +1    east
+              /  |  \
+          -9    -8    -7
+  soWe         sout         soEa
+```
 
 ## Shifting a bit
 
