@@ -17,7 +17,7 @@ plan:
 - title: III. Multi cells operations
   plan:
     - title: III.1 Filter and iterator
-    statement: markdowns/managing_entity.md
+      statement: markdowns/managing_entity.md
 projects:
   cpp:
     root: /cpp-project
