@@ -81,14 +81,16 @@ And the opposite:
 We will use this conversion **so many times** that we should keep this evaluation somewhere in our code. We will juste create a macro since we only need text replacement, not a function.
 
 ```C++
-#DEFINE ONEHOT(x) (1 << (x))
+#define ONEHOT(x) (1 << (x))
 ```
 
-# Updating position
+# Updating coordinate
 
-In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
+What are the different operations we will need on coordinates ? The single is **the update**. 
 
-Considering the above example, you get the same result with: `hero.position >>= 1`.
+For example, if you are dealing with a **one-hot vector** representing a cell, or a single **entity on the board** for example, you can move the entity by **simply shifting** the bitboard.
+
+You want to move your hero to the left and you have a one-hot vector encoding his position ? So you can achieve this with the simple: `hero.position >>= 1`.
 
 ```C++
 void moveHeroLeft(Hero * hero) {
@@ -97,6 +99,7 @@ void moveHeroLeft(Hero * hero) {
 ```
 
 How does it works with other relative position ? A picture speaks a thousand words:
+<br/>
 
 ![Compass](img/compass.png)
 
