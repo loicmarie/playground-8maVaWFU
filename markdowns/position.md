@@ -88,9 +88,11 @@ We will use this conversion **so many times** that we should keep this evaluatio
 
 What are the different operations we will need on coordinates ? The single is **the update**. 
 
-For example, if you are dealing with a **one-hot vector** representing a cell, or a single **entity on the board** for example, you can move the entity by **simply shifting** the bitboard.
+For example, if you are dealing with a **one-hot vector** representing a cell, or a single **entity on the board** (let's say a hero), you will probably want to move it at one time.
 
-You want to move your hero to the left and you have a one-hot vector encoding his position ? So you can achieve this with the simple: `hero.position >>= 1`.
+The cool thing is, you can move your hero (or whatever) by **simply shifting** the bitboard.
+
+Let's say you want to move your hero to the left and you have a one-hot vector encoding his position. So you can achieve this with the simple: `hero.position >>= 1`.
 
 ```C++
 void moveHeroLeft(Hero * hero) {
