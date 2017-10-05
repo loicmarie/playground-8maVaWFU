@@ -56,6 +56,33 @@ This is the encoding we will choose most of the time. In combination with bitboa
 
 Yes, but with an additional constraint: only one bit is high (1). It will be pretty confusing up to the end of the tutorial, so be very careful when you handle **position (bitboard)** and **cells (one-hot vector)**.
 
+## Bit position conversion
+
+```math
+\begin{equation}
+  \tag{One-hot to bit position}
+  bitpos = y * W + x
+\end{equation}
+```
+
+And the opposite:
+
+```math
+\begin{equation}
+  \tag{Bit position to one-hot}
+  onehot = 1 << bitposition
+\end{equation}
+```
+
+```C++ runnable
+#include <cstdlib>
+#include <cstdio>
+
+int main() {
+    unsigned int test = (1 << 3);
+    printf("%d\n", test);
+}
+
 # Updating position
 
 In reality, if the bitboard you are dealing with is a **one-hot vector** representing a cell, or a single entity on the board for example, you can get the same result by **simply shifting** the bitboard.
