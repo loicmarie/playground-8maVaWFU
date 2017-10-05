@@ -83,7 +83,7 @@ And the opposite:
 We will use this conversion **so many times** that we should keep this evaluation somewhere in our code. We will juste create a macro since we only need text replacement, not a function.
 
 ```C++
-#define ONEHOT(x) (1 << (x))
+#define 1H(x) (1 << (x))
 ```
 
 # <a href="update-onehot"></a> Updating coordinate
