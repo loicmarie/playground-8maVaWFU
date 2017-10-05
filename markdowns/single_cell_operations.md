@@ -109,7 +109,7 @@ In the previous chapter, we made our hero move because we had a one-hot vector h
 * You could **handle `H` one-hot vectors** but it's not always a suitable solution
 * You could keep only **one one-hot vector with all the positions**.
 
-In the second case, you will need to update the hero coordinates without changing the others. The previously seen method is not available anymore.
+In the second case, you will need to update the hero coordinates **without changing the others**. The previously seen method is not available anymore.
 
 So, we want to **swap** values between (x1,y1) and (x2,y2) coordinates. In other words: we want to **exchange the value of bit n° bitpos1 with the value of bit n° bitpos2**. We can easily do this with by using our function "switch". It gives:
 
