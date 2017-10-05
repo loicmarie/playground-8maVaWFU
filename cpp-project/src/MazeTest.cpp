@@ -8,14 +8,13 @@
 
 using namespace std;
 
-
 void display(Bitboard position) {
     int i,j;
     Bitboard currPosition = position;
 
     printf("Bitboard display:\n\n");
-    for(i=0; i < 3; i++) {
-        for ( j = 0; j < 3; j++) {
+    for(i=0; i < H; i++) {
+        for ( j = 0; j < W; j++) {
             printf((currPosition & 0x01) ? "1" : "0");
             currPosition >>= 1;
         }
@@ -30,20 +29,61 @@ void displayPretty(Bitboard position) {
 
     printf("Bitboard pretty display:\n\n");
     printf("   |");
-    for (j = 0; j < 3; j++)
+    for (j = 0; j < W; j++)
         printf(" %d |", j);
     printf("\n");
-    for (j=0; j<4; j++)
+    for (j=0; j<W+1; j++)
         printf("----");
     printf("\n");
-    for(i=0; i < 3; i++) {
+    for(i=0; i < H; i++) {
         printf(" %d |", i);
-        for ( j = 0; j < 3; j++) {
+        for ( j = 0; j < W; j++) {
             printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
             currPosition >>= 1;
         }
         printf("\n");
-        for (j=0; j<4; j++)
+        for (j=0; j<W+1; j++)
+            printf("----");
+        printf("\n");
+    }
+    printf("\n");
+
+}
+
+void displayMaze(OneHot pos, OneHot startPos, OneHot endPos, Bitboard walls) {
+    char symb;
+    int i,j;
+    Bitboard currPos = pos;
+
+    printf("Bitboard pretty display:\n\n");
+    printf("   |");
+    for (j = 0; j < W; j++)
+        printf(" %d |", j);
+    printf("\n");
+    for (j=0; j<W+1; j++)
+        printf("----");
+    printf("\n");
+    for(i=0; i < H; i++) {
+        printf(" %d |", i);
+        for ( j = 0; j < W; j++) {
+            if (currPos & 0x01)
+                symb = 'C';
+            else if (startPos & 0x01)
+                symb = 'S';
+            else if (endPos & 0x01)
+                symb = 'E';
+            else if (walls & 0x01)
+                symb = 'X';
+            else
+                symb = '.';
+            printf(" %c |", symb);
+            currPos >>= 1;
+            walls >>= 1;
+            startPos >>= 1;
+            endPos >>= 1;
+        }
+        printf("\n");
+        for (j=0; j<W+1; j++)
             printf("----");
         printf("\n");
     }
