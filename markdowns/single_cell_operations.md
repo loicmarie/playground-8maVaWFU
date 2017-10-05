@@ -254,4 +254,9 @@ int main() {
 }
 ```
 
-# What has been done so far
+# Why you are stronger now
+
+1. We have learnt how to **`get`**, **`set`** and **`switch`** value on a cell.
+2. We have seen we can **`swap`** two cells using the `switch` function and we have established the relation with entities deplacements on a board.
+
+You are now able to **make single cells operations** on a board. Let's take a look at some engines we can write with such knowledges.
