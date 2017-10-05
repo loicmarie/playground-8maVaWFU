@@ -92,7 +92,7 @@ int main() {
         // Maze maze;
         // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
         run();
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("----- isWall CHECKING -----\n\n");
         AssertEquals(true, isWall(1, walls), "CHECK isWall(0, walls)\n");
@@ -105,47 +105,47 @@ int main() {
 
         printf("DO moveUp(%lu)\n\n", currPos);
         currPos = moveUp(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveRight(%lu)\n\n", currPos);
         currPos = moveRight(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveUp(%lu)\n\n", currPos);
         currPos = moveUp(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveUp(%lu)\n\n", currPos);
         currPos = moveUp(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveRight(%lu)\n\n", currPos);
         currPos = moveRight(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveLeft(%lu)\n\n", currPos);
         currPos = moveLeft(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveRight(%lu)\n\n", currPos);
         currPos = moveRight(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveRight(%lu)\n\n", currPos);
         currPos = moveRight(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveDown(%lu)\n\n", currPos);
         currPos = moveDown(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveDown(%lu)\n\n", currPos);
         currPos = moveDown(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         printf("DO moveDown(%lu)\n\n", currPos);
         currPos = moveDown(currPos);
-        Utils::displayMaze(currPos, startPos, exitPos, walls);
+        displayMaze(currPos, startPos, exitPos, walls);
 
         Success(true);
 
