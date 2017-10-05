@@ -1,5 +1,20 @@
 # TP1: Escape the Maze
 
+Now we are going to help a poor man to **find the exit in a maze**.
+
+You are given the following variables:
+* `startPos` is the **start position** of the character (**one-hot**)
+* `exitPos` is the **exit position** he has to reach (**one-hot**)
+* `walls` is the representation of walls position (**bitboard**)
+* `currPos` is the **current position** of the character 
+
+To help yourself, you're given the traditional `display` and `displayPretty` functions, which I add an extra:
+```C++
+void displayMaze(OneHot position, OneHot endPosition, Bitboard walls)
+```
+
+Let's take a look at those 4 variables et 3 methods in action:
+
 ```C++ runnable
 // { autofold
 #include <cstdlib>
@@ -74,7 +89,7 @@ namespace Utils {
             printf(" %d |", i);
             for ( j = 0; j < W; j++) {
                 if (currPosition & 0x01)
-                    symb = 'P';
+                    symb = 'C';
                 else if (endPosition & 0x01)
                     symb = 'E';
                 else if (walls & 0x01)
@@ -102,6 +117,7 @@ int main() {
     const OneHot exitPos = 0x40000000000000;
     const OneHot startPos = 0x200;
     const Bitboard walls = 0xffb5a1ab89ada5ff;
+    OneHot currPos = startPos;
 
     printf("********** MAZE SIMULATION **********\n\n");
     Utils::displayMaze(startPos, exitPos, walls);
@@ -109,6 +125,11 @@ int main() {
     return 0;
 }
 ```
+
+Concerning the symbols in the above:
+* `C` is the character to move
+* `E` is the exit position
+* `X` is a wall
 
 # Let's code
 
