@@ -6,7 +6,7 @@ You are given the following variables:
 * `startPos` is the **start position** of the character (**one-hot**)
 * `exitPos` is the **exit position** he has to reach (**one-hot**)
 * `walls` is the representation of walls position (**bitboard**)
-* `currPos` is the **current position** of the character 
+* `currPos` is the **current position** of the character (**one-hot**)
 
 To help yourself, you're given the traditional `display` and `displayPretty` functions, which I add an extra:
 ```C++
