@@ -90,11 +90,6 @@ namespace Utils {
 // }
 }
 
-const OneHot exitPos = 0x40000000000000;
-const OneHot startPos = 0x8000000000000;
-const Bitboard walls = 0xffb5a1ab89ada5ff;
-OneHot currPos = startPos;
-
 OneHot moveUp(OneHot pos) {
     return pos >> W;
     // put your magic here

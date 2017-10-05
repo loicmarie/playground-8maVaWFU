@@ -17,9 +17,6 @@ typedef uint64_t OneHot;
 
 using namespace std;
 
-typedef uint64_t Bitboard;
-typedef uint64_t OneHot;
-
 class Maze {
     public:
 };
@@ -31,5 +28,10 @@ OneHot moveRight(OneHot cell);
 bool isWall(OneHot cell, Bitboard walls);
 bool isExit(OneHot cell, OneHot exitPos);
 void run();
+
+const OneHot exitPos = 0x40000000000000;
+const OneHot startPos = 0x8000000000000;
+const Bitboard walls = 0xffb5a1ab89ada5ff;
+OneHot currPos = startPos;
 
 #endif // TEST_EXERCICES_MAZE_H_
