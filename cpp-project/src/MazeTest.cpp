@@ -92,6 +92,61 @@ int main() {
         // Maze maze;
         // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
         run();
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("----- isWall CHECKING -----\n\n");
+        AssertEquals(true, isWall(1, walls), "CHECK isWall(0, walls)\n");
+        AssertEquals(true, isWall(2, walls), "CHECK isWall(2, walls)\n\n");
+        AssertEquals(false, isWall(512, walls), "CHECK isWall(512, walls)\n\n");
+
+        printf("----- isExit CHECKING -----\n\n");
+        AssertEquals(true, isExit(18014398509481984, exitPos), "CHECK isExit(18014398509481984, exitPos)\n\n");
+        AssertEquals(false, isExit(512, exitPos), "CHECK isExit(512, exitPos)\n\n");
+
+        printf("DO moveUp(%lu)\n\n", currPos);
+        currPos = moveUp(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveRight(%lu)\n\n", currPos);
+        currPos = moveRight(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveUp(%lu)\n\n", currPos);
+        currPos = moveUp(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveUp(%lu)\n\n", currPos);
+        currPos = moveUp(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveRight(%lu)\n\n", currPos);
+        currPos = moveRight(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveLeft(%lu)\n\n", currPos);
+        currPos = moveLeft(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveRight(%lu)\n\n", currPos);
+        currPos = moveRight(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveRight(%lu)\n\n", currPos);
+        currPos = moveRight(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveDown(%lu)\n\n", currPos);
+        currPos = moveDown(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveDown(%lu)\n\n", currPos);
+        currPos = moveDown(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
+        printf("DO moveDown(%lu)\n\n", currPos);
+        currPos = moveDown(currPos);
+        Utils::displayMaze(currPos, startPos, exitPos, walls);
+
         Success(true);
 
         // vector<int> galaxy1 {2, 3};
