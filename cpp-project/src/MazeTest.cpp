@@ -8,6 +8,54 @@
 
 using namespace std;
 
+
+namespace Utils {
+
+    void display(Bitboard position) {
+        int i,j;
+        Bitboard currPosition = position;
+
+        printf("Bitboard display:\n\n");
+        for(i=0; i < 3; i++) {
+            for ( j = 0; j < 3; j++) {
+                printf((currPosition & 0x01) ? "1" : "0");
+                currPosition >>= 1;
+            }
+        }
+        printf("\n\n");
+    }
+
+    void displayPretty(Bitboard position) {
+        char symb;
+        int i,j;
+        Bitboard currPosition = position;
+
+        printf("Bitboard pretty display:\n\n");
+        printf("   |");
+        for (j = 0; j < 3; j++)
+            printf(" %d |", j);
+        printf("\n");
+        for (j=0; j<4; j++)
+            printf("----");
+        printf("\n");
+        for(i=0; i < 3; i++) {
+            printf(" %d |", i);
+            for ( j = 0; j < 3; j++) {
+                printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
+                currPosition >>= 1;
+            }
+            printf("\n");
+            for (j=0; j<4; j++)
+                printf("----");
+            printf("\n");
+        }
+        printf("\n");
+
+  }
+
+}
+
+
 void Message(string channel, string msg) {
     stringstream ss(msg);
     string line;
@@ -45,9 +93,9 @@ void AssertEquals(int expected, int found, string message) {
 int main() {
     try {
 
-        // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
         Maze maze;
-        printf("OK");
+        // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
+        
         Success(true);
 
         // vector<int> galaxy1 {2, 3};
