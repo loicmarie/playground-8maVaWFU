@@ -3,9 +3,17 @@
 
 using namespace std;
 
+typedef Bitboard unsigned int;
+typedef OneHot unsigned int;
+
 class Maze {
     public:
-    static int CountAllStars(vector<int>& galaxies);
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    bool isWall(OneHot cell);
+    bool isExit(OneHot cell);
 };
 
 #endif // TEST_EXERCICES_MAZE_H_

@@ -22,10 +22,10 @@ void Maze::moveRight() {
     // put your magic here
 }
 
-void Maze::isWall(OneHot cell) {
+bool Maze::isWall(OneHot cell) {
     // put your magic here
 }
 
-void Maze::isExit(OneHot cell) {
+bool Maze::isExit(OneHot cell) {
 
 }
