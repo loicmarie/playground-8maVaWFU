@@ -10,7 +10,7 @@ You are given the following variables:
 
 To help yourself, you're given the traditional `display` and `displayPretty` functions, which I add an extra:
 ```C++
-void displayMaze(OneHot position, OneHot endPosition, Bitboard walls)
+void displayMaze(OneHot pos, OneHot startPos, OneHot endPos, Bitboard walls)
 ```
 
 Let's take a look at those 4 variables et 3 methods in action:
@@ -72,10 +72,10 @@ namespace Utils {
 
   }
 
-  void displayMaze(OneHot position, OneHot endPosition, Bitboard walls) {
+  void displayMaze(OneHot pos, OneHot startPos, OneHot endPos, Bitboard walls) {
         char symb;
         int i,j;
-        Bitboard currPosition = position;
+        Bitboard currPos = pos;
 
         printf("Bitboard pretty display:\n\n");
         printf("   |");
@@ -88,18 +88,21 @@ namespace Utils {
         for(i=0; i < H; i++) {
             printf(" %d |", i);
             for ( j = 0; j < W; j++) {
-                if (currPosition & 0x01)
+                if (currPos & 0x01)
                     symb = 'C';
-                else if (endPosition & 0x01)
+                else if (startPos & 0x01)
+                    symb = 'S';
+                else if (endPos & 0x01)
                     symb = 'E';
                 else if (walls & 0x01)
                     symb = 'X';
                 else
                     symb = '.';
                 printf(" %c |", symb);
-                currPosition >>= 1;
+                currPos >>= 1;
                 walls >>= 1;
-                endPosition >>= 1;
+                startPos >>= 1;
+                endPos >>= 1;
             }
             printf("\n");
             for (j=0; j<W+1; j++)
@@ -120,7 +123,7 @@ int main() {
     OneHot currPos = startPos;
 
     printf("********** MAZE SIMULATION **********\n\n");
-    Utils::displayMaze(startPos, exitPos, walls);
+    Utils::displayMaze(currPos, startPos, exitPos, walls);
 
     return 0;
 }
