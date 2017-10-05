@@ -89,9 +89,9 @@ void AssertEquals(int expected, int found, string message) {
 int main() {
     try {
 
-        Maze maze;
+        // Maze maze;
         // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
-
+        run();
         Success(true);
 
         // vector<int> galaxy1 {2, 3};

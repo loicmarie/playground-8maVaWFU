@@ -12,12 +12,14 @@ typedef uint64_t OneHot;
 
 class Maze {
     public:
-    void moveUp();
-    void moveDown();
-    void moveLeft();
-    void moveRight();
-    bool isWall(OneHot cell);
-    bool isExit(OneHot cell);
+    // void moveUp();
+    // void moveDown();
+    // void moveLeft();
+    // void moveRight();
+    // bool isWall(OneHot cell);
+    // bool isExit(OneHot cell);
 };
+
+void run();
 
 #endif // TEST_EXERCICES_MAZE_H_

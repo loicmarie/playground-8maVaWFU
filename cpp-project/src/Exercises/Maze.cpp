@@ -54,26 +54,30 @@ const OneHot exitPos = 0x40000000000000;
 const OneHot startPos = 0x200;
 const Bitboard walls = 0xffb5a1ab89ada5ff;
 
-void Maze::moveUp() {
+void moveUp() {
     // put your magic here
 }
 
-void Maze::moveDown() {
+void moveDown() {
     // put your magic here
 }
 
-void Maze::moveLeft() {
+void moveLeft() {
     // put your magic here
 }
 
-void Maze::moveRight() {
+void moveRight() {
     // put your magic here
 }
 
-bool Maze::isWall(OneHot cell) {
+bool isWall(OneHot cell) {
     // put your magic here
 }
 
-bool Maze::isExit(OneHot cell) {
+bool isExit(OneHot cell) {
 
+}
+
+void run() {
+    printf("ok\n");
 }
