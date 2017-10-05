@@ -98,7 +98,7 @@ Let's say you want to move your hero to the left and you have a one-hot vector e
 
 ```C++
 void moveHeroLeft(Hero * hero) {
-    hero.position >>= 1;
+    hero->position >>= 1;
 }
 ```
 
