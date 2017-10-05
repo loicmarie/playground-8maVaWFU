@@ -1,11 +1,11 @@
 # Handling coordinates
 
-We have just seen that a cell can be defined by the **position of the bit** on the bitboard. In fact, by using bitboards you will need to deal with three different coordinates:
+We have just seen that a cell can be defined by the **position of the bit** on the bitboard. In fact, by using bitboards you will need to deal with **three different coordinates**:
 * **Bit position** that we talked about in the previous chapter
 * [**Cartesian coordinates**](#cartesian) (x,y), that you should all know about
 * The [**one-hot vectors**](#onehot), less known but no less important
 
-Finally, we will see how to [update coordinates](#update-onehot) and so **move entities** on the board.
+Finally, we will see how to [**update coordinates**](#update-onehot) and so **move entities** on the board.
 
 # <a href="cartesian"></a> Cartesian coordinates (x,y)
 
