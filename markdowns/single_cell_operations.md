@@ -48,14 +48,14 @@ We will make it in two steps:
 <br/>
 
 ```math
-bitboard = bitboard \vee (1 \ll bitpos)
+bitboard = bitboard \vee ONEHOT(bitpos)
 ```
 
 We can write it up:
 
 ```C++
 Bitboard setCell(Bitboard bitboard, int x, int y) {
-    return bitboard | (1 << (y * 3 + x));
+    return bitboard | ONEHOT(y * 3 + x);
 }
 ```
 
@@ -70,14 +70,14 @@ We will make it in two steps:
 
 
 ```math
-bitboard = bitboard \wedge \mathord{\sim}(1 \ll bitpos)
+bitboard = bitboard \wedge \mathord{\sim}ONEHOT(bitpos)
 ```
 
 See the `~` thing in the formula ? This is the bitwise-NOT. We can write it up:
 
 ```C++
 Bitboard clearCell(Bitboard bitboard, int x, int y) {
-    return bitboard & ~(1 << (y * 3 + x));
+    return bitboard & ~ONEHOT(y * 3 + x);
 }
 ```
 
@@ -92,14 +92,14 @@ We will make it in two steps:
 <br/>
 
 ```math
-bitboard = bitboard \oplus (1 \ll bitpos)
+bitboard = bitboard \oplus ONEHOT(bitpos)
 ```
 
 We can write it up:
 
 ```C++
 Bitboard switchCell(Bitboard bitboard, int x, int y) {
-    return bitboard ^ (1 << (y * 3 + x));
+    return bitboard ^ ONEHOT(y * 3 + x);
 }
 ```
 
@@ -110,14 +110,14 @@ We want to **swap** values between (x1,y1) and (x2,y2) coordinates. In other wor
 We can easily do this with by using our function "switch". It gives:
 
 ```math
-bitboard = bitboard \oplus (1 \ll bitpos1) \oplus (1 \ll bitpos2)
+bitboard = bitboard \oplus ONEHOT(bitpos1) \oplus ONEHOT(bitpos2)
 ```
 
 We can write it up:
 
 ```C++
 Bitboard swapCells(Bitboard position, int x1, int y1, int x2, int y2) {
-    return position ^ (1 << (y2 * 3 + x2)) ^ (1 << (y1 * 3 + x1));
+    return position ^ ONEHOT(y2 * 3 + x2) ^ ONEHOT(y1 * 3 + x1);
 }
 ```
 
