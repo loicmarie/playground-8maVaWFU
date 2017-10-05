@@ -2,7 +2,7 @@
 #include "Maze.h"
 // }
 
-const OneHot exit = 0x40000000000000;
+const OneHot exitPos = 0x40000000000000;
 const OneHot startPos = 0x200;
 const Bitboard walls = 0xffb5a1ab89ada5ff;
 
