@@ -9,6 +9,14 @@ To well understand how to deal with absolute positioning, we will see:
 - How to [get a cell value](#get-cell)
 - How to [set a cell value](#set-cell)
 
+Remember our previously created macro `1H`, to instanciate one-hot vectors ? In case you have short memories:
+
+```C++
+#define 1H(x) (1 << (x))
+```
+
+This macro is used in the major part of the following formulas. Be sure to well understand it.
+
 # <a name="get-cell"></a> Getting cell value
 
 #### Get value
