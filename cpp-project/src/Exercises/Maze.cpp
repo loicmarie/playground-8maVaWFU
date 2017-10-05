@@ -2,19 +2,6 @@
 #include "Maze.h"
 // }
 
-// { autofold
-#include <cstdlib>
-#include <cstdio>
-#include <cstdint>
-
-#define W 8
-#define H 8
-#define OH(x) (1 << (x))
-
-typedef uint64_t Bitboard;
-typedef uint64_t OneHot;
-// }
-
 namespace Utils {
   // autofold {
 
