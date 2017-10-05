@@ -76,7 +76,7 @@ And the opposite:
 \end{equation}
 ```
 
-#### Important: `onehot` function
+## Important: `onehot` function
 
 We will use this conversion **so many times** that we should keep this evaluation somewhere in our code. We will juste create a macro since we only need text replacement, not a function.
 
