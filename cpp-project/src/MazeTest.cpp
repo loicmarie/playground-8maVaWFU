@@ -1,20 +1,7 @@
 #include "Exercises/Maze.h"
 
-#include <string>
-#include <vector>
-#include <iostream>
 #include <sstream>
 #include <fstream>
-
-#include <cstdlib>
-#include <cstdint>
-
-#define W 8
-#define H 8
-#define OH(x) (1 << (x))
-
-typedef uint64_t Bitboard;
-typedef uint64_t OneHot;
 
 using namespace std;
 

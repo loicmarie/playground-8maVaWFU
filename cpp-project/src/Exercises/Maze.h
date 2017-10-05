@@ -1,9 +1,19 @@
 #ifndef TEST_EXERCICES_MAZE_H_
 #define TEST_EXERCICES_MAZE_H_
 
+#include <string>
+#include <vector>
+#include <iostream>
+
 #include <cstdlib>
-#include <cstdio>
 #include <cstdint>
+
+#define W 8
+#define H 8
+#define OH(x) (1 << (x))
+
+typedef uint64_t Bitboard;
+typedef uint64_t OneHot;
 
 using namespace std;
 
