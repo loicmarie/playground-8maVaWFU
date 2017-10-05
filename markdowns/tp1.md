@@ -5,6 +5,12 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstdint>
+
+#define W 8
+#define H 8
+
+typedef uint64_t Bitboard;
+typedef uint64_t OneHot;
 // }
 namespace Utils {
   // autofold {
@@ -14,8 +20,8 @@ namespace Utils {
         Bitboard currPosition = position;
 
         printf("Bitboard display:\n\n");
-        for(i=0; i < 3; i++) {
-            for ( j = 0; j < 3; j++) {
+        for(i=0; i < H; i++) {
+            for ( j = 0; j < W; j++) {
                 printf((currPosition & 0x01) ? "1" : "0");
                 currPosition >>= 1;
             }
@@ -30,20 +36,58 @@ namespace Utils {
 
         printf("Bitboard pretty display:\n\n");
         printf("   |");
-        for (j = 0; j < 3; j++)
+        for (j = 0; j < W; j++)
             printf(" %d |", j);
         printf("\n");
-        for (j=0; j<4; j++)
+        for (j=0; j<W+1; j++)
             printf("----");
         printf("\n");
-        for(i=0; i < 3; i++) {
+        for(i=0; i < H; i++) {
             printf(" %d |", i);
-            for ( j = 0; j < 3; j++) {
+            for ( j = 0; j < W; j++) {
                 printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
                 currPosition >>= 1;
             }
             printf("\n");
-            for (j=0; j<4; j++)
+            for (j=0; j<W+1; j++)
+                printf("----");
+            printf("\n");
+        }
+        printf("\n");
+
+  }
+
+  void displayMaze(OneHot position, OneHot endPosition, Bitboard walls) {
+        char symb;
+        int i,j;
+        Bitboard currPosition = position;
+
+        printf("Bitboard pretty display:\n\n");
+        printf("   |");
+        for (j = 0; j < W; j++)
+            printf(" %d |", j);
+        printf("\n");
+        for (j=0; j<W+1; j++)
+            printf("----");
+        printf("\n");
+        for(i=0; i < H; i++) {
+            printf(" %d |", i);
+            for ( j = 0; j < W; j++) {
+                if (currPosition & 0x01)
+                    symb = 'P';
+                else if (endPosition & 0x01)
+                    symb = 'E';
+                else if (walls & 0x01)
+                    symb = 'X';
+                else
+                    symb = '.';
+                printf(" %c |", symb);
+                currPosition >>= 1;
+                walls >>= 1;
+                endPosition >>= 1;
+            }
+            printf("\n");
+            for (j=0; j<W+1; j++)
                 printf("----");
             printf("\n");
         }
@@ -59,16 +103,8 @@ int main() {
     const OneHot startPos = 0x200;
     const Bitboard walls = 0xffb5a1ab89ada5ff;
 
-    printf("********** MAZE SIMULATION **********\n");
-
-    printf("_____ WALLS POSITION _____\n");
-    Utils::displayPretty(walls);
-
-    printf("_____ START POSITION _____\n");
-    Utils::displayPretty(startPos);
-
-    printf("_____ EXIT POSITION _____\n");
-    Utils::displayPretty(exitPos);
+    printf("********** MAZE SIMULATION **********\n\n");
+    Utils::displayMaze(startPos, exitPos, walls);
 
     return 0;
 }

@@ -1,14 +1,7 @@
 // { autofold
-#include <cstdlib>
-#include <cstdio>
-#include <cstdint>
-
-#define W 8
-#define H 8
-
-typedef uint64_t Bitboard;
-typedef uint64_t OneHot;
+#include "Maze.h"
 // }
+
 namespace Utils {
   // autofold {
 
@@ -17,8 +10,8 @@ namespace Utils {
         Bitboard currPosition = position;
 
         printf("Bitboard display:\n\n");
-        for(i=0; i < H; i++) {
-            for ( j = 0; j < W; j++) {
+        for(i=0; i < 3; i++) {
+            for ( j = 0; j < 3; j++) {
                 printf((currPosition & 0x01) ? "1" : "0");
                 currPosition >>= 1;
             }
@@ -33,58 +26,20 @@ namespace Utils {
 
         printf("Bitboard pretty display:\n\n");
         printf("   |");
-        for (j = 0; j < W; j++)
+        for (j = 0; j < 3; j++)
             printf(" %d |", j);
         printf("\n");
-        for (j=0; j<W+1; j++)
+        for (j=0; j<4; j++)
             printf("----");
         printf("\n");
-        for(i=0; i < H; i++) {
+        for(i=0; i < 3; i++) {
             printf(" %d |", i);
-            for ( j = 0; j < W; j++) {
+            for ( j = 0; j < 3; j++) {
                 printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
                 currPosition >>= 1;
             }
             printf("\n");
-            for (j=0; j<W+1; j++)
-                printf("----");
-            printf("\n");
-        }
-        printf("\n");
-
-  }
-
-  void displayMaze(OneHot position, OneHot endPosition, Bitboard walls) {
-        char symb;
-        int i,j;
-        Bitboard currPosition = position;
-
-        printf("Bitboard pretty display:\n\n");
-        printf("   |");
-        for (j = 0; j < W; j++)
-            printf(" %d |", j);
-        printf("\n");
-        for (j=0; j<W+1; j++)
-            printf("----");
-        printf("\n");
-        for(i=0; i < H; i++) {
-            printf(" %d |", i);
-            for ( j = 0; j < W; j++) {
-                if (currPosition & 0x01)
-                    symb = 'P';
-                else if (endPosition & 0x01)
-                    symb = 'E';
-                else if (walls & 0x01)
-                    symb = 'X';
-                else
-                    symb = '.';
-                printf(" %c |", symb);
-                currPosition >>= 1;
-                walls >>= 1;
-                endPosition >>= 1;
-            }
-            printf("\n");
-            for (j=0; j<W+1; j++)
+            for (j=0; j<4; j++)
                 printf("----");
             printf("\n");
         }
@@ -95,13 +50,30 @@ namespace Utils {
 // }
 }
 
-int main() {
-    const OneHot exitPos = 0x40000000000000;
-    const OneHot startPos = 0x200;
-    const Bitboard walls = 0xffb5a1ab89ada5ff;
+const OneHot exitPos = 0x40000000000000;
+const OneHot startPos = 0x200;
+const Bitboard walls = 0xffb5a1ab89ada5ff;
 
-    printf("********** MAZE SIMULATION **********\n\n");
-    Utils::displayMaze(startPos, exitPos, walls);
+void Maze::moveUp() {
+    // put your magic here
+}
 
-    return 0;
+void Maze::moveDown() {
+    // put your magic here
+}
+
+void Maze::moveLeft() {
+    // put your magic here
+}
+
+void Maze::moveRight() {
+    // put your magic here
+}
+
+bool Maze::isWall(OneHot cell) {
+    // put your magic here
+}
+
+bool Maze::isExit(OneHot cell) {
+
 }
