@@ -1,7 +1,11 @@
 #include "Exercises/Maze.h"
 
 #include <string>
+#include <vector>
 #include <iostream>
+#include <sstream>
+#include <fstream>
+
 #include <cstdlib>
 #include <cstdint>
 
