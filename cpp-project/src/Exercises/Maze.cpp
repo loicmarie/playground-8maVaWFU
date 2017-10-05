@@ -118,6 +118,19 @@ bool isExit(OneHot cell, OneHot exitPos) {
     return cell & exitPos;
 }
 
+int minPathLength(OneHot pos, OneHot exitPos, Bitboard walls) {
+// autofold {
+    Bitboard visited = pos;
+    int c = -1;
+    while (!(visited & exitPos)) {
+        visited |= pos & ~visited;
+        pos = (moveUp(pos) | moveDown(pos) | moveLeft(pos) | moveRight(pos)) & ~walls;
+        c++;
+    }
+    return c;
+// }
+}
+
 void run() {
     const OneHot exitPos = 0x40000000000000;
     const OneHot startPos = 0x8000000000000;
