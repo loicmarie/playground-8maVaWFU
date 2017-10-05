@@ -105,7 +105,9 @@ Bitboard switchCell(Bitboard bitboard, int x, int y) {
 
 # Swapping values
 
-In the previous chapter, we made our hero move because we had a one-hot vector handling his position. What if **there is `H` heros on the board** ? Either you will have to **get `H` one-hot vectors**, or you will keep only **one with all the positions**.
+In the previous chapter, we made our hero move because we had a one-hot vector handling his position. What if **there is `H` heros on the board** ?
+* You could **handle `H` one-hot vectors** but it's not always a suitable solution
+* You could keep only **one one-hot vector with all the positions**.
 
 In the second case, you will need to update the hero coordinates without changing the others. The previously seen method is not available anymore.
 
