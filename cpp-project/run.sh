@@ -1,3 +1,3 @@
 #!/bin/sh
 
-make && ./universe
+make && ./maze
