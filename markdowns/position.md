@@ -2,10 +2,12 @@
 
 We have just seen that a cell can be defined by the **position of the bit** on the bitboard. In fact, by using bitboards you will need to deal with three different coordinates:
 * **Bit position** that we talked about in the previous chapter
-* **Cartesian coordinates** (x,y), that you should all know about
-* The **one-hot vectors**, less known but no less important
+* [**Cartesian coordinates**](#cartesian) (x,y), that you should all know about
+* The [**one-hot vectors**](#onehot), less known but no less important
 
-# Cartesian coordinates (x,y)
+Finally, we will see how to [update coordinates](#update-onehot) and so **move entities** on the board.
+
+# <a href="cartesian"></a> Cartesian coordinates (x,y)
 
 We have already talked about it in the previous chapter, so we will just show how can we make conversion from (x,y) to bit position and vice versa.
 
@@ -38,7 +40,7 @@ Alternatively, we can deduce the cartesian coordinates from the bit position. Th
 
 At this point we know all the necessary conversions from bit position to (x,y) coordinates. We can now begin to write our engine methods.
 
-# One-hot vector
+# <a href="onehot"></a> One-hot vector
 
 We call a "**one-hot vector**" a group of bits with a single high (1) bit and all the others low (0).
 
@@ -84,7 +86,7 @@ We will use this conversion **so many times** that we should keep this evaluatio
 #define ONEHOT(x) (1 << (x))
 ```
 
-# Updating coordinate
+# <a href="update-onehot"></a> Updating coordinate
 
 What are the different operations we will need on coordinates ? The single is **the update**. 
 
