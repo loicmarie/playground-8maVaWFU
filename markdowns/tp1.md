@@ -1,6 +1,6 @@
 # TP1: Escape the Maze
 
-Now we are going to help a poor man to **find the exit in a maze**.
+Now we are going to help a poor man to **find the exit in a 8x8 maze**.
 
 You are given the following variables:
 * `startPos` is the **start position** of the character (**one-hot**)
