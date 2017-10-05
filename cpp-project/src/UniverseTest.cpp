@@ -30,7 +30,7 @@ bool ExistsInFile(string str, string filename) {
             return true;
         }
     }
-    
+
     return false;
 }
 

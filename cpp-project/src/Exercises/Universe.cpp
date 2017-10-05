@@ -9,4 +9,3 @@ int Universe::CountAllStars(vector<int>& galaxies) {
     }
     return total_stars;
 }
-
