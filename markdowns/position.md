@@ -61,7 +61,7 @@ Yes, but with an additional constraint: only one bit is high (1). It will be pre
 ```math
 \begin{equation}
   \tag{One-hot to bit position}
-  bitpos = \log^2{onehot}
+  bitpos = \log_2{onehot}
 \end{equation}
 ```
 
