@@ -105,9 +105,11 @@ Bitboard switchCell(Bitboard bitboard, int x, int y) {
 
 # Swapping values
 
-We want to **swap** values between (x1,y1) and (x2,y2) coordinates. In other words: we want to **exchange the value of bit n° bitpos1 with the value of bit n° bitpos2**.
+In the previous chapter, we made our hero move because we had a one-hot vector handling his position. What if **there is `H` heros on the board** ? Either you will have to **get `H` one-hot vectors**, or you will keep only **one with all the positions**.
 
-We can easily do this with by using our function "switch". It gives:
+In the second case, you will need to update the hero coordinates without changing the others. The previously seen method is not available anymore.
+
+So, we want to **swap** values between (x1,y1) and (x2,y2) coordinates. In other words: we want to **exchange the value of bit n° bitpos1 with the value of bit n° bitpos2**. We can easily do this with by using our function "switch". It gives:
 
 ```math
 bitboard = bitboard \oplus 1H(bitpos1) \oplus 1H(bitpos2)
@@ -121,11 +123,7 @@ Bitboard swapCells(Bitboard position, int x1, int y1, int x2, int y2) {
 }
 ```
 
-#### Example: moving an entity
-
-You have a hero on a 2D map, and you want it to move to the left. Fortunately, you have a one-hot vector called `hero.position` that handles the hero position.
-
-Then, you can just `hero.position = swapCells(hero.x, hero.y, hero.x-1, hero.y)` and you're done.
+In the hero example from the previous chapter, you can just `hero.position = swapCells(hero.x, hero.y, hero.x-1, hero.y)` and you're done.
 
 ```C++
 void moveHeroLeft(Hero * hero) {
