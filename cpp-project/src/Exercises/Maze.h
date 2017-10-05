@@ -10,11 +10,6 @@ using namespace std;
 typedef uint64_t Bitboard;
 typedef uint64_t OneHot;
 
-namespace Utils {
-    display(Bitboard position);
-    displayPretty(Bitboard position);
-}
-
 class Maze {
     public:
     void moveUp();

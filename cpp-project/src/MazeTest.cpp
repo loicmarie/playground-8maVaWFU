@@ -9,49 +9,45 @@
 using namespace std;
 
 
-namespace Utils {
+void display(Bitboard position) {
+    int i,j;
+    Bitboard currPosition = position;
 
-    void display(Bitboard position) {
-        int i,j;
-        Bitboard currPosition = position;
-
-        printf("Bitboard display:\n\n");
-        for(i=0; i < 3; i++) {
-            for ( j = 0; j < 3; j++) {
-                printf((currPosition & 0x01) ? "1" : "0");
-                currPosition >>= 1;
-            }
+    printf("Bitboard display:\n\n");
+    for(i=0; i < 3; i++) {
+        for ( j = 0; j < 3; j++) {
+            printf((currPosition & 0x01) ? "1" : "0");
+            currPosition >>= 1;
         }
-        printf("\n\n");
     }
+    printf("\n\n");
+}
 
-    void displayPretty(Bitboard position) {
-        char symb;
-        int i,j;
-        Bitboard currPosition = position;
+void displayPretty(Bitboard position) {
+    char symb;
+    int i,j;
+    Bitboard currPosition = position;
 
-        printf("Bitboard pretty display:\n\n");
-        printf("   |");
-        for (j = 0; j < 3; j++)
-            printf(" %d |", j);
+    printf("Bitboard pretty display:\n\n");
+    printf("   |");
+    for (j = 0; j < 3; j++)
+        printf(" %d |", j);
+    printf("\n");
+    for (j=0; j<4; j++)
+        printf("----");
+    printf("\n");
+    for(i=0; i < 3; i++) {
+        printf(" %d |", i);
+        for ( j = 0; j < 3; j++) {
+            printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
+            currPosition >>= 1;
+        }
         printf("\n");
         for (j=0; j<4; j++)
             printf("----");
         printf("\n");
-        for(i=0; i < 3; i++) {
-            printf(" %d |", i);
-            for ( j = 0; j < 3; j++) {
-                printf(" %c |", (currPosition & 0x01) ? 'X' : '.');
-                currPosition >>= 1;
-            }
-            printf("\n");
-            for (j=0; j<4; j++)
-                printf("----");
-            printf("\n");
-        }
-        printf("\n");
-
-  }
+    }
+    printf("\n");
 
 }
 
@@ -95,7 +91,7 @@ int main() {
 
         Maze maze;
         // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
-        
+
         Success(true);
 
         // vector<int> galaxy1 {2, 3};
