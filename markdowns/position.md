@@ -114,3 +114,10 @@ void moveHeroUp(Hero * hero) {
     hero.position >>= WIDTH;
 }
 ```
+
+# Why you are stronger now
+
+1. You know how to represent a coordinate with a **bit position**, a **cartesian coordinate** (x,y) and a **one-hot vector**.
+2. You can now **move entities on the board** with a simple shift operation on one-hot vectors.
+
+Now we've seen coordinates and how to modify it, we can get into the **board operations**. For the moment, we will begin with operations on a single cell.
