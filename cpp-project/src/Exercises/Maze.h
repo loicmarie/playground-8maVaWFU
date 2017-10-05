@@ -1,6 +1,9 @@
 #ifndef TEST_EXERCICES_MAZE_H_
 #define TEST_EXERCICES_MAZE_H_
 
+#include <cstdlib>
+#include <cstdio>
+
 using namespace std;
 
 typedef uint64_t Bitboard;
