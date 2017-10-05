@@ -11,7 +11,6 @@ typedef uint64_t Bitboard;
 typedef uint64_t OneHot;
 
 namespace Utils {
-    public:
     display(Bitboard position);
     displayPretty(Bitboard position);
 }
