@@ -4,15 +4,16 @@ Now we can find ourselves in a 2D board, we will see how to **access** and **mod
 
 First of all, we will study how to use cartesian coordinates (x,y) with **absolute position**. In the next chapter, we will do the same thing using **relative position** this time.
 
-To well understand how to deal with absolute positioning, we will see:
-- How to [define a cell with absolute coordinates](#cells-and-absolute)
-- How to [get a cell value](#get-cell)
-- How to [set a cell value](#set-cell)
+To well understand how to deal with absolute positioning, we will see how to:
+1. [Get a cell value](#get-cell)
+2. [Set a cell value](#set-cell)
+3. [Switch a cell value](#switch-cell)
+4. [Swap two cell values](#swap-cells)
 
 Remember our previously created macro `1H`, to instanciate one-hot vectors ? In case you have short memories:
 
 ```C++
-#define 1H(x) (1 << (x))
+#define 1H(x) (1 << (x)) // x = hot bit position
 ```
 
 This macro is used in the major part of the following formulas. Be sure to well understand it.
@@ -90,7 +91,7 @@ Bitboard clearCell(Bitboard bitboard, int x, int y) {
 ```
 
 
-# Switching value
+# <a name="switch-cell"></a> Switching value
 
 We want to **switch** the value at (x,y) coordinates. In other words: **if the bit is 1, we want it to 0. Otherwise, we want it to 1**.
 
@@ -111,7 +112,7 @@ Bitboard switchCell(Bitboard bitboard, int x, int y) {
 }
 ```
 
-# Swapping values
+# <a name="swap-cells"></a> Swapping values
 
 In the previous chapter, we made our hero move because we had a one-hot vector handling his position. What if **there is `H` heros on the board** ?
 * You could **handle `H` one-hot vectors** but it's not always a suitable solution
