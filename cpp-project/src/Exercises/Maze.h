@@ -3,8 +3,8 @@
 
 using namespace std;
 
-typedef unsigned int Bitboard;
-typedef unsigned int OneHot;
+typedef uint64_t Bitboard;
+typedef uint64_t OneHot;
 
 class Maze {
     public:

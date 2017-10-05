@@ -47,6 +47,7 @@ int main() {
 
         // AssertEquals(5, Universe::CountAllStars(galaxy1), "Running Universe::CountAllStars(2, 3)...");
         Maze maze;
+        printf("OK");
         Success(true);
 
         // vector<int> galaxy1 {2, 3};
