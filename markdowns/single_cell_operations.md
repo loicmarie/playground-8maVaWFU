@@ -2,13 +2,11 @@
 
 Now we can find ourselves in a 2D board, we will see how to **access** and **modify** cells.
 
-First of all, we will study how to use cartesian coordinates (x,y) with **absolute position**. In the next chapter, we will do the same thing using **relative position** this time.
-
-To well understand how to deal with absolute positioning, we will see how to:
-1. [Get a cell value](#get-cell)
-2. [Set a cell value](#set-cell)
-3. [Switch a cell value](#switch-cell)
-4. [Swap two cell values](#swap-cells)
+To well understand how to modify board and coordinates, we will see how to:
+1. [**Get** a cell value](#get-cell)
+2. [**Set** a cell value](#set-cell)
+3. [**Switch** a cell value](#switch-cell)
+4. [**Swap** two cell values](#swap-cells)
 
 Remember our previously created macro `1H`, to instanciate one-hot vectors ? In case you have short memories:
 
@@ -25,7 +23,7 @@ This macro is used in the major part of the following formulas. Be sure to well 
 Now that we know how are defined position and cells, we want to get the value at a position (x,y).
 
 We will make it in two steps:
-1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+1. Define the cell in one-hot encoding
 2. Make a **bitwise-AND** between the cell and the board
 
 If the resulting bitboard is **equal to 0**, the **value at bitpos is 0**
@@ -52,7 +50,7 @@ bool getCell(Bitboard position, int x, int y) {
 We want to **add** an element at (x,y) coordinates. In other words: we want to set the **bit n° _bitpos_ at 1**.
 
 We will make it in two steps:
-1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+1. Define the cell in one-hot encoding
 2. Make a **bitwise-OR** between the cell and the board
 <br/>
 
@@ -73,7 +71,7 @@ Bitboard setCell(Bitboard bitboard, int x, int y) {
 We want to **remove** an element at (x,y) coordinates. In other words: we want to set the **bit n° _bitpos_ at 0**.
 
 We will make it in two steps:
-1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+1. Define the cell in one-hot encoding
 2. Make a **bitwise-AND** between the **bitwise-NOT** of cell and the board
 <br/>
 
@@ -96,7 +94,7 @@ Bitboard clearCell(Bitboard bitboard, int x, int y) {
 We want to **switch** the value at (x,y) coordinates. In other words: **if the bit is 1, we want it to 0. Otherwise, we want it to 1**.
 
 We will make it in two steps:
-1. Define the cell: create a one-hot vector with one bit set to 1 at bitpos, and the others at 0.
+1. Define the cell in one-hot encoding
 2. Make a **bitwise-XOR** between the cell and the board
 <br/>
 
