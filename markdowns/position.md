@@ -58,6 +58,8 @@ Yes, but with an additional constraint: only one bit is high (1). It will be pre
 
 ## Bit position conversion
 
+As for cartesian coordinates, we will need some formulas to handle bit position to one-hot encoding conversion.
+
 ```math
 \begin{equation}
   \tag{One-hot to bit position}
@@ -74,14 +76,13 @@ And the opposite:
 \end{equation}
 ```
 
-```C++ runnable
-#include <cstdlib>
-#include <cstdio>
+#### Important: `onehot` function
 
-int main() {
-    unsigned int test = (1 << 3);
-    printf("%d\n", test);
-}
+We will use this conversion **so many times** that we should keep this evaluation somewhere in our code. We will juste create a macro since we only need text replacement, not a function.
+
+```C++
+#DEFINE ONEHOT(x) (1 << (x))
+```
 
 # Updating position
 
